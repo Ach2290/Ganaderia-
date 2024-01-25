@@ -58,3 +58,22 @@ Hemos desarrollado la aplicación "GanaderíaPlus" con un diseño intuitivo y f�
 
 
 ![colores](https://github.com/Ach2290/Ganaderia-/assets/132547490/21011c26-bee1-475d-ad86-b1462ec4e50c)
+
+- Color #3F8847 ultilizamos este color para destacar los titulos, botones y los bordes de campos de entrada de texto en la aplicación.
+- Color #F1FFFA Este color lo utilizamos para dejarlo como fondo de la aplicación.
+- Color #CCFAE9 Lo utilizamos como fondo de los RecycledView donde se cargaran distintas tarjetas. Estas tarjetas tendran tambien el color principal con una opacidad del 24%.
+- Color #000000 lo utilizamos para el texto y el contorno de los iconos.
+- Color #FCFCFC este lo utilizamos para el contraste de texto.
+
+### TIPOGRAIFA
+
+- Rounded Mplus Bolt 1c: esta tipografia la utilizamos para los titulos
+- Istok Web: la utilizamos para el texto de la aplicación 
+- Inder: la utilizamos para subtitulos
+
+### ICONOS
+
+![notas(1)](https://github.com/Ach2290/Ganaderia-/assets/132547490/d60a0b6a-91e3-46a7-ac3f-f6bcddbb60b8)
+- Este icono lo utilizamos en las CardView donde se muestra el historial de movimientos
+![cortijo-removebg-preview](https://github.com/Ach2290/Ganaderia-/assets/132547490/6b346c5d-1999-4564-ae2d-d5188cfe7650)
+-Este icono lo utilizamos en las CardView donde se muestra las explotaciones del ganadero
