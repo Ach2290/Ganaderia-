@@ -74,6 +74,8 @@ Hemos desarrollado la aplicación "GanaderíaPlus" con un diseño intuitivo y f�
 ### ICONOS
 
 ![notas(1)](https://github.com/Ach2290/Ganaderia-/assets/132547490/d60a0b6a-91e3-46a7-ac3f-f6bcddbb60b8)
+
 - Este icono lo utilizamos en las CardView donde se muestra el historial de movimientos
 ![cortijo-removebg-preview](https://github.com/Ach2290/Ganaderia-/assets/132547490/6b346c5d-1999-4564-ae2d-d5188cfe7650)
+
 -Este icono lo utilizamos en las CardView donde se muestra las explotaciones del ganadero
