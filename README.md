@@ -49,3 +49,12 @@ Nuestra aplicación está dirigida específicamente a los ganaderos, es decir, a
     -   El diseño intuitivo y la experiencia del usuario eficiente y agradable indican que la aplicación se ha creado teniendo en cuenta las características y contextos de uso de los ganaderos, buscando facilitar sus tareas diarias.
 
 En resumen, la aplicación "GanaderíaPlus" está diseñada para ser una herramienta práctica y especializada que aborde los desafíos específicos que enfrentan los ganaderos en la gestión de su ganado y actividades relacionadas. Su objetivo es mejorar la eficiencia, la trazabilidad y la gestión general de las operaciones ganaderas.
+
+## DISEÑO DE LA APP
+
+Hemos desarrollado la aplicación "GanaderíaPlus" con un diseño intuitivo y fácil de usar, pensando en la comodidad de los ganaderos. El objetivo principal es que los usuarios puedan aprovechar todas las funcionalidades de la aplicación sin complicaciones, evitando cualquier confusión durante su uso. Nos hemos centrado en proporcionar una experiencia fluida y sencilla, asegurándonos de que la interfaz sea amigable para que los ganaderos puedan navegar de manera eficiente y realizar sus tareas de gestión sin dificultad. En lugar de complicar el proceso, nos esforzamos por simplificar la interacción, facilitando así la adopción y el disfrute de la aplicación "GanaderíaPlus".
+
+### COLORES
+
+
+![colores](https://github.com/Ach2290/Ganaderia-/assets/132547490/21011c26-bee1-475d-ad86-b1462ec4e50c)
