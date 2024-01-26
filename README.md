@@ -54,16 +54,22 @@ En resumen, la aplicación "GanaderíaPlus" está diseñada para ser una herrami
 
 Hemos desarrollado la aplicación "GanaderíaPlus" con un diseño intuitivo y fácil de usar, pensando en la comodidad de los ganaderos. El objetivo principal es que los usuarios puedan aprovechar todas las funcionalidades de la aplicación sin complicaciones, evitando cualquier confusión durante su uso. Nos hemos centrado en proporcionar una experiencia fluida y sencilla, asegurándonos de que la interfaz sea amigable para que los ganaderos puedan navegar de manera eficiente y realizar sus tareas de gestión sin dificultad. En lugar de complicar el proceso, nos esforzamos por simplificar la interacción, facilitando así la adopción y el disfrute de la aplicación "GanaderíaPlus".
 
+### LOGO
+
+![Black Vintage Retro Livestock Cattle Logo](https://github.com/Ach2290/Ganaderia-/assets/132547490/6a167c85-88bf-4c53-9e3a-b41c704c7fbb)
+
+El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya que la aplicación diseñada va enfocada a ese sector.
+
+
 ### COLORES
 
+![paleta](https://github.com/Ach2290/Ganaderia-/assets/132547490/c529d9d0-cd89-48dd-ac4a-4372f5269643)
 
-![colores](https://github.com/Ach2290/Ganaderia-/assets/132547490/21011c26-bee1-475d-ad86-b1462ec4e50c)
-
-- Color #3F8847 ultilizamos este color para destacar los titulos, botones y los bordes de campos de entrada de texto en la aplicación.
-- Color #F1FFFA Este color lo utilizamos para dejarlo como fondo de la aplicación.
-- Color #CCFAE9 Lo utilizamos como fondo de los RecycledView donde se cargaran distintas tarjetas. Estas tarjetas tendran tambien el color principal con una opacidad del 24%.
-- Color #000000 lo utilizamos para el texto y el contorno de los iconos.
-- Color #FCFCFC este lo utilizamos para el contraste de texto.
+- Color #344E41 Este color lo utilizamos para dejarlo como fondo de la aplicación.
+- Color #ABD777 Lo utilizamos como color secunadario para destacar contenido importante de la aplicación y que haga contraste con el fondo y su contenido.
+- Color #3F8847 Lo utilizamos como fondo de los Cardview.Este color aparace en distintas opacidades. 
+- Color #000000 Lo utilizamos para el texto y el contorno de los iconos.
+- Color #FCFCFC Este lo utilizamos para el contraste de texto y contornos de iconos.
 
 ### TIPOGRAIFA
 
