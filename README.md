@@ -85,3 +85,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 ![cortijo-removebg-preview](https://github.com/Ach2290/Ganaderia-/assets/132547490/6b346c5d-1999-4564-ae2d-d5188cfe7650)
 
 -Este icono lo utilizamos en las CardView donde se muestra las explotaciones del ganadero
+
+### Casos de Uso para la API REST:
+
+
