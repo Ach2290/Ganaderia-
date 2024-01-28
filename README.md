@@ -105,7 +105,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 
 ![recorteRecyclerview](https://github.com/Ach2290/Ganaderia-/assets/132547643/fda962ca-40af-4619-bb8d-5b61f9391f94)
 
-- En todas las pantallas encontremos un BottomNavigationbar que permitira al usuario navegar por las distintas pestañas.
+- En todas las pantallas encontremos un BottomNavigationbar que permitira al usuario navegar entre los distintos fragments.
 
 - Todas las pantallas donde el usuario pueda consultar información que se cargue desde la base de datos, se usará un RecyclerView que dentro tendra distintas tarjetas. Todas estas tarjetas serán clicables y redijiran al usuario hacia otras pantallas con mas información sobre el elemento clicado.
 
