@@ -85,6 +85,32 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 ![cortijo-removebg-preview](https://github.com/Ach2290/Ganaderia-/assets/132547490/6b346c5d-1999-4564-ae2d-d5188cfe7650)
 
 - Este icono lo utilizamos en las CardView donde se muestra las explotaciones del ganadero
+- 
+### ELEMENTOS DE DISEÑO
+
+![recorteRecyclerview](https://github.com/Ach2290/Ganaderia-/assets/132547643/fda962ca-40af-4619-bb8d-5b61f9391f94)
+
+- En todas las pantallas encontremos un BottomNavigationbar que permitira al usuario navegar por las distintas pestañas.
+
+- Todas las pantallas donde el usuario pueda consultar información que se cargue desde la base de datos, se usará un RecyclerView que dentro tendra distintas tarjetas. Todas estas tarjetas serán clicables y redijiran al usuario hacia otras pantallas con mas información sobre el elemento clicado.
+
+- Encontramos también en las pantallas que muestran información, un SearchView que el usuario usará para filtar los resultados que se están mostrando en el RecyclerView.
+
+![recorteExplotacion](https://github.com/Ach2290/Ganaderia-/assets/132547643/ed847a3f-84fd-4095-9154-4cde604add8e)
+
+- En esta pantalla tendremos todos los elementos de diseño explicados anteriormente, donde además se añade un FloatingButton que desplegara un submenú para que el ususario elija que tipo de movimiento quiere realizar.
+
+![recorteMovimiento](https://github.com/Ach2290/Ganaderia-/assets/132547643/f4ad5cf5-f490-4563-8510-e76ccc45007d)
+
+- En la pantalla de realizar movimiento, cabe destacar la utilización de un desplegable en el apartado "TIPO DE MOVIMIENTO" que desplegará las diferentes opciones que tiene el ususario.
+
+- También encontramos un boton clicable en "AÑADIR ANIMALES" con un simbolo más, que al ser clicado desplegara un AlertDialog que permitira al usuario elegir los animales que quiere añadir al movimiento.
+
+![recortePerfil](https://github.com/Ach2290/Ganaderia-/assets/132547643/ea3a31d6-e4b1-48bf-b69a-730c57c997ce)
+
+- En la pantalla del perfil encontramos distintos cuadros de texto que, al clicar en el icono del lápiz, permitira al usuario realizar modificaciones en sus datos.
+
+
 
 ### CASOS DE USO :
 
