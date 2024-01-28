@@ -92,6 +92,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 - Este icono se usará en el NavigationBar para indicar la zona del perfil.
   
 ![image](https://github.com/Ach2290/Ganaderia-/assets/132547643/a42ed083-7884-45ad-9bb2-fc0048bcad0e)
+
 ![image](https://github.com/Ach2290/Ganaderia-/assets/132547643/19d46787-4a76-47e6-b605-f900f632b826)
 
 - Estos iconos se usarán para indicar que animales se encuentran en cada explotación.
