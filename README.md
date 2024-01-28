@@ -85,7 +85,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 ![cortijo-removebg-preview](https://github.com/Ach2290/Ganaderia-/assets/132547490/6b346c5d-1999-4564-ae2d-d5188cfe7650)
 
 - Este icono lo utilizamos en las CardView donde se muestra las explotaciones del ganadero además de en el RecyclerView.
-- ![image](https://github.com/Ach2290/Ganaderia-/assets/132547643/fb6a62a2-1c7e-42ea-a512-5536c1dfc249)
+![image](https://github.com/Ach2290/Ganaderia-/assets/132547643/fb6a62a2-1c7e-42ea-a512-5536c1dfc249)
 
 - Este icono se usará en el NavigationBar para indicar la zona del perfil.
 ![image](https://github.com/Ach2290/Ganaderia-/assets/132547643/a42ed083-7884-45ad-9bb2-fc0048bcad0e)
@@ -95,7 +95,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 ![back](https://github.com/Ach2290/Ganaderia-/assets/132547643/01e1d784-a976-4ca6-bddf-ac759540cda2)
 
 - Este icono lo utilizaremos para los botones de volver atrás.
-- 
+
 ### ELEMENTOS DE DISEÑO
 
 ![recorteRecyclerview](https://github.com/Ach2290/Ganaderia-/assets/132547643/fda962ca-40af-4619-bb8d-5b61f9391f94)
