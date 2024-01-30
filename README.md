@@ -26,7 +26,7 @@ Incluye un módulo personalizado para que los ganaderos gestionen su informació
 **Tecnologías y Plataformas:** La aplicación se desarrolla utilizando phpmyadmin ,AndroidStudio para su uso en dispositivos móviles.
 
 
-## A quien va dirigida nuestra App
+# A quien va dirigida nuestra App
 Nuestra aplicación está dirigida específicamente a los ganaderos, es decir, a aquellas personas que se dedican a la cría y cuidado de animales en una explotación ganadera. La razón principal de su desarrollo es facilitar y mejorar la gestión de las operaciones diarias de los ganaderos, ofreciendo herramientas especializadas que aborden las necesidades específicas de este sector. Aquí hay algunas razones clave por las que la aplicación está dirigida a los ganaderos:
 
 1.  **Gestión Eficiente del Ganado:**
@@ -50,7 +50,7 @@ Nuestra aplicación está dirigida específicamente a los ganaderos, es decir, a
 
 En resumen, la aplicación "GanaderíaPlus" está diseñada para ser una herramienta práctica y especializada que aborde los desafíos específicos que enfrentan los ganaderos en la gestión de su ganado y actividades relacionadas. Su objetivo es mejorar la eficiencia, la trazabilidad y la gestión general de las operaciones ganaderas.
 
-## DISEÑO DE LA APP
+# DISEÑO DE LA APP
 
 Hemos desarrollado la aplicación "GanaderíaPlus" con un diseño intuitivo y fácil de usar, pensando en la comodidad de los ganaderos. El objetivo principal es que los usuarios puedan aprovechar todas las funcionalidades de la aplicación sin complicaciones, evitando cualquier confusión durante su uso. Nos hemos centrado en proporcionar una experiencia fluida y sencilla, asegurándonos de que la interfaz sea amigable para que los ganaderos puedan navegar de manera eficiente y realizar sus tareas de gestión sin dificultad. En lugar de complicar el proceso, nos esforzamos por simplificar la interacción, facilitando así la adopción y el disfrute de la aplicación "GanaderíaPlus".
 
@@ -101,7 +101,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 
 - Este icono lo utilizaremos para los botones de volver atrás.
 
-### ELEMENTOS DE DISEÑO
+# ELEMENTOS DE DISEÑO
 
 ![recorteRecyclerview](https://github.com/Ach2290/Ganaderia-/assets/132547643/fda962ca-40af-4619-bb8d-5b61f9391f94)
 
@@ -127,7 +127,7 @@ El logo que hemos creado hace referencia al mundo animal de una ganaderia, ya qu
 
 
 
-### CASOS DE USO :
+# CASOS DE USO :
 
 ![casosUsoGanaderia drawio](https://github.com/Ach2290/Ganaderia-/assets/132547490/0d464f7f-aa90-40ac-8fee-5d9a0e9ab2cd)
 
