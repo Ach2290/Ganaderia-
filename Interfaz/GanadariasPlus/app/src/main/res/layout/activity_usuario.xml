@@ -19,7 +19,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.22161423" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
@@ -52,12 +59,26 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:background="@drawable/fondo_verde_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/h2" />
+        app:layout_constraintTop_toBottomOf="@id/h3" />
 
-   
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/rounded"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="EL PIPARRA"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toEndOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@id/h2"
+        app:layout_constraintBottom_toTopOf="@id/h3"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
