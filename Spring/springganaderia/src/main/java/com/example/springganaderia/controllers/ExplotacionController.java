@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,8 +21,21 @@ public class ExplotacionController {
 
     @GetMapping("/all")
     public List<Explotacion> getAllExplotaciones() { return explotacionService.getAllExplotaciones();}
+
     @GetMapping("/by_id_ganadero/{id}")
-    public List<Explotacion> getExplotacionesByIdGanadero(@PathVariable Integer id) { return explotacionService.getExplotacionesByIdGanadero(id);}
+    public List<String> getExplotacionesByIdGanadero(@PathVariable Integer id) {
+
+        List<Explotacion> explotaciones =  explotacionService.getExplotacionesByIdGanadero(id);
+
+        ArrayList<String> allNames = new ArrayList<>();
+
+        for (Explotacion explotacion : explotaciones){
+            allNames.add(explotacion.getNombre());
+        }
+
+        return allNames;
+
+    }
 
 }
 
