@@ -23,17 +23,10 @@ public class ExplotacionController {
     public List<Explotacion> getAllExplotaciones() { return explotacionService.getAllExplotaciones();}
 
     @GetMapping("/by_id_ganadero/{id}")
-    public List<String> getExplotacionesByIdGanadero(@PathVariable Integer id) {
+    public List<Explotacion> getExplotacionesByIdGanadero(@PathVariable Integer id) {
 
-        List<Explotacion> explotaciones =  explotacionService.getExplotacionesByIdGanadero(id);
+        return explotacionService.getExplotacionesByIdGanadero(id);
 
-        ArrayList<String> allNames = new ArrayList<>();
-
-        for (Explotacion explotacion : explotaciones){
-            allNames.add(explotacion.getNombre());
-        }
-
-        return allNames;
 
     }
 
