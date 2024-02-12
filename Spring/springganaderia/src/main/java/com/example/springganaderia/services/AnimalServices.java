@@ -13,5 +13,11 @@ public class AnimalServices {
     @Autowired
     private AnimalRepository animalRepository;
 
+    public List<Animal> getAllAnimales() { return animalRepository.findAll();}
+
     public List<Animal> getAnimalesByIdExplotacion(Integer id){ return animalRepository.obtenerAnimalesPorIdExplotacion(id);}
+
+    public List<Animal> getAnimalesById(Integer idexplotacion, Integer idanimal){ return animalRepository.obtenerAnimalesPorId(idexplotacion, idanimal);}
+
+
 }
