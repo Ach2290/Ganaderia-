@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-01-2024 a las 14:15:53
+-- Tiempo de generación: 12-02-2024 a las 13:31:46
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -38,6 +38,17 @@ CREATE TABLE `animal` (
   `id_explotacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `animal`
+--
+
+INSERT INTO `animal` (`id`, `especie`, `sexo`, `edad`, `estado`, `id_explotacion`) VALUES
+(1, 'Vaca', 'H', 3, 'Saludable', 1),
+(2, 'Cerdo', 'M', 2, 'Enfermo', 3),
+(3, 'Oveja', 'H', 1, 'Saludable', 2),
+(4, 'Pollo', 'M', 0, 'Saludable', 2),
+(5, 'Caballo', 'H', 5, 'Enfermo', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +59,17 @@ CREATE TABLE `animal_movimiento` (
   `id_animal` int(11) NOT NULL,
   `id_movimiento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `animal_movimiento`
+--
+
+INSERT INTO `animal_movimiento` (`id_animal`, `id_movimiento`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -63,6 +85,17 @@ CREATE TABLE `explotacion` (
   `capacidad` int(11) NOT NULL,
   `id_ganadero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `explotacion`
+--
+
+INSERT INTO `explotacion` (`id`, `nombre`, `ubicacion`, `tipo_animal`, `capacidad`, `id_ganadero`) VALUES
+(1, 'Granja A', 'Calle Granjera', 'Ganado Lechero', 100, 1),
+(2, 'Granja B', 'Avenida Rural', 'Ganado de Carne', 75, 2),
+(3, 'Granja C', 'Camino Ganadero', 'Avícola', 50, 3),
+(4, 'Granja D', 'Rincón Agrícola', 'Ovino', 30, 1),
+(5, 'Granja E', 'Sendero Ganadero', 'Equino', 20, 2);
 
 -- --------------------------------------------------------
 
@@ -100,6 +133,17 @@ CREATE TABLE `matadero` (
   `telefono` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `matadero`
+--
+
+INSERT INTO `matadero` (`id`, `nombre`, `direccion`, `telefono`) VALUES
+(2, 'Matadero S.A.', 'Avenida Central', '555-4321'),
+(3, 'Carnicería del Valle', 'Calle 456, Ciudad', '555-8765'),
+(4, 'Carnes Frescas', 'Carrera 789, Pueblo', '555-9876'),
+(5, 'Sabor a Carne', 'Callejón 123, Villa', '555-1111'),
+(6, 'El Buen Asador', 'Avenida 789, Ciudad', '555-2222');
+
 -- --------------------------------------------------------
 
 --
@@ -113,6 +157,17 @@ CREATE TABLE `movimiento` (
   `id_explotacion` int(11) DEFAULT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `movimiento`
+--
+
+INSERT INTO `movimiento` (`id`, `tipo`, `id_matadero`, `id_explotacion`, `fecha`) VALUES
+(1, 'Compra', NULL, 1, '2024-02-05'),
+(2, 'Venta', NULL, 2, '2024-02-10'),
+(3, 'Traslado', NULL, 3, '2024-02-15'),
+(4, 'Compra', NULL, 4, '2024-02-20'),
+(5, 'Venta', NULL, 5, '2024-02-25');
 
 --
 -- Índices para tablas volcadas
@@ -168,7 +223,7 @@ ALTER TABLE `movimiento`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `ganadero`
@@ -180,13 +235,13 @@ ALTER TABLE `ganadero`
 -- AUTO_INCREMENT de la tabla `matadero`
 --
 ALTER TABLE `matadero`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `movimiento`
 --
 ALTER TABLE `movimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
