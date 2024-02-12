@@ -15,5 +15,7 @@ public class ExplotacionService {
 
     public List<Explotacion> getAllExplotaciones() { return explotacionRepository.findAll();}
 
+    public Explotacion getExplotacionById(Integer id) { return explotacionRepository.findById(id).get();}
+
     public List<Explotacion> getExplotacionesByIdGanadero(Integer id) { return explotacionRepository.obtenerExplotacionesPorIdGanadero(id);}
 }
