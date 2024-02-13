@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_margin="15dp"
         android:elevation="15dp"
         app:cardCornerRadius="15dp"
-        android:backgroundTint="@color/card_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/card_green"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -28,7 +28,7 @@
                 android:layout_weight="1"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:src="@drawable/barn" />
+                android:src="@drawable/folder" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,10 +37,9 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/idExplotacion"
+                    android:id="@+id/idMovimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:layout_weight="1"
                     android:gravity="left"
                     android:paddingTop="10dp"
@@ -50,18 +49,29 @@
                     android:text="ID:" />
 
                 <TextView
-                    android:id="@+id/nombreExplotacion"
+                    android:id="@+id/tipoMovimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-
                     android:layout_weight="1"
                     android:gravity="left"
                     android:paddingTop="10dp"
                     android:paddingStart="10dp"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    android:text="NOMBRE EXPLOTACIÓN" />
+                    android:text="TIPO" />
+
+                <TextView
+                    android:id="@+id/fechaMovimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingStart="10dp"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:text="FECHA" />
 
             </LinearLayout>
         </LinearLayout>

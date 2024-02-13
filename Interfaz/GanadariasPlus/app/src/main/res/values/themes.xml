@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.GanadariasPlus" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/bc_green</item>
     </style>
 
     <style name="Theme.GanadariasPlus" parent="Base.Theme.GanadariasPlus" />

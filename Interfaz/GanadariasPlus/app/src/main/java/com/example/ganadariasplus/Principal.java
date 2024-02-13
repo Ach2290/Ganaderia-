@@ -26,7 +26,10 @@ public class Principal extends AppCompatActivity implements BottomNavigationView
     }
 
     FirstFragmenExplotaciones fragmenExplotaciones = new FirstFragmenExplotaciones();
+
+    SecondFragmentHistorial fragmentHistorial = new SecondFragmentHistorial();
     ThirdFragmentUsuario fragmentUsuario = new ThirdFragmentUsuario();
+
 
 
     @Override
@@ -42,6 +45,9 @@ public class Principal extends AppCompatActivity implements BottomNavigationView
             return true;
         } else if (item.getItemId() == R.id.ganadero){
             getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragmentUsuario).commit();
+            return true;
+        }else if (item.getItemId() == R.id.historial){
+            getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragmentHistorial).commit();
             return true;
         }
         return false;

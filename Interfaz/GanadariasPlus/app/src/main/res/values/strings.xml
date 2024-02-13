@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">GanadariasPlus</string>
-</resources>
+    <string-array name="explotacion_id">
+        <item>USD</item>
+        <item>GPB</item>
+        <item>JPY</item>
+        <item>CNY</item>
+        <item>CAD</item>
+        <item>ALL</item>
+        <item>BAM</item>
+        <item>ARS</item>
+        <item>DKK</item>
+        <item>LBP</item>
+
+    </string-array>
+    <string-array name="explotacion_nombre">
+        <item>1.08697</item>
+        <item>0.85881</item>
+        <item>160.716</item>
+        <item>7.74205</item>
+        <item>1.46866</item>
+        <item>101.743</item>
+        <item>1.95583</item>
+        <item>889.535</item>
+        <item>7.45761</item>
+        <item>16304.5</item>
+    </string-array></resources>
