@@ -8,11 +8,18 @@
     tools:context=".Usuario">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/h1"
+        android:id="@+id/h0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h2"
@@ -26,21 +33,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.27" />
+        app:layout_constraintGuide_percent="0.31" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.67" />
+        app:layout_constraintGuide_percent="0.83" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -48,19 +55,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.59" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nombre"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="Correo Electrónico"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/h6"
-        app:layout_constraintEnd_toStartOf="@+id/V4"
-        app:layout_constraintStart_toStartOf="@+id/V3"
-        app:layout_constraintTop_toTopOf="@+id/h3" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
@@ -81,14 +83,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.19951338" />
+        app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/V4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.93" />
 
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -98,7 +100,7 @@
         app:layout_constraintBottom_toTopOf="@+id/h2"
         app:layout_constraintEnd_toStartOf="@+id/v2"
         app:layout_constraintStart_toStartOf="@+id/v1"
-        app:layout_constraintTop_toTopOf="@+id/h1"
+        app:layout_constraintTop_toTopOf="@+id/h0"
         app:shapeAppearanceOverlay="@style/redondear"
         app:srcCompat="@drawable/granjero">
 
@@ -108,8 +110,10 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:background="@drawable/fondo_verde_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/h3" />
 
@@ -127,7 +131,138 @@
         app:layout_constraintTop_toBottomOf="@id/h2"
         app:layout_constraintBottom_toTopOf="@id/h3"/>
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/correo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="piparrita@gmail.com"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintStart_toStartOf="@+id/V3"
+        app:layout_constraintTop_toTopOf="@+id/h1" />
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/telefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="638542179"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintStart_toStartOf="@+id/V3"
+        app:layout_constraintTop_toTopOf="@+id/h6" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/direccion"
+        android:layout_width="0dp"
+        android:layout_marginEnd="30dp"
+        android:layout_height="wrap_content"
+        android:text="C/Granjilla nº8"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/V3"
+        app:layout_constraintTop_toTopOf="@+id/h4" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/contraseña"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="*********"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/V3"
+        app:layout_constraintTop_toTopOf="@+id/h5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/h6"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintTop_toTopOf="@+id/h1"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/h4"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintTop_toTopOf="@+id/h6"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/h5"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintTop_toTopOf="@+id/h4"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintBottom_toTopOf="@+id/h7"
+        app:layout_constraintEnd_toStartOf="@+id/V4"
+        app:layout_constraintTop_toTopOf="@+id/h5"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <TextView
+        android:id="@+id/Ncorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CORREO ELECTRÓNICO"
+        android:fontFamily="@font/rounded"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/correo"
+        app:layout_constraintStart_toStartOf="@+id/V3"
+ />
+
+    <TextView
+        android:id="@+id/Ntelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rounded"
+        android:text="NUMERO DE TELÉFONO"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/telefono"
+        app:layout_constraintStart_toStartOf="@+id/V3" />
+    <TextView
+        android:id="@+id/Ncalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rounded"
+        android:text="DIRECCIÓN"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/direccion"
+        app:layout_constraintStart_toStartOf="@+id/V3" />
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rounded"
+        android:text="CONTRASEÑA"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/contraseña"
+        app:layout_constraintStart_toStartOf="@+id/V3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
