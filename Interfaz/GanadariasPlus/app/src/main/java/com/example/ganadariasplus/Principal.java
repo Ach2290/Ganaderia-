@@ -21,11 +21,12 @@ public class Principal extends AppCompatActivity implements BottomNavigationView
 
         navigation.setOnNavigationItemSelectedListener(this);
 
-        navigation.setSelectedItemId(R.id.user);
+        navigation.setSelectedItemId(R.id.explotacion);
 
     }
 
     FirstFragmenExplotaciones fragmenExplotaciones = new FirstFragmenExplotaciones();
+    ThirdFragmentUsuario fragmentUsuario = new ThirdFragmentUsuario();
 
 
     @Override
@@ -36,8 +37,11 @@ public class Principal extends AppCompatActivity implements BottomNavigationView
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId() == R.id.user){
+        if(item.getItemId() == R.id.explotacion){
             getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragmenExplotaciones).commit();
+            return true;
+        } else if (item.getItemId() == R.id.ganadero){
+            getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragmentUsuario).commit();
             return true;
         }
         return false;

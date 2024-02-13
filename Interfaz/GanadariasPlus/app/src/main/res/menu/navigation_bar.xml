@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/user"
+        android:id="@+id/explotacion"
         android:title="EXPLOTACION"
         android:icon="@drawable/barn"/>
     <item
-        android:id="@+id/home"
+        android:id="@+id/historial"
         android:title="MOVIMIENTOS"
         android:icon="@drawable/folder"/>
     <item
-        android:id="@+id/football"
+        android:id="@+id/ganadero"
         android:title="GANADERO"
         android:icon="@drawable/farmer"/>
 </menu>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bc_green"
-    tools:context=".Usuario">
+    tools:context=".ThirdFragmentUsuario">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h0"
