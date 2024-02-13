@@ -12,28 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GanadariasPlus"
         tools:targetApi="31">
-
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
         <activity
             android:name=".ThirdFragmentUsuario"
             android:exported="false" />
-
         <activity
             android:name=".FirstFragmenExplotaciones"
             android:exported="false" />
-
         <activity
             android:name=".Login"
-            android:exported="false"></activity>
-
+            android:exported="false" />
         <activity
             android:name=".Principal"
-            android:exported="false"/>
-            
+            android:exported="false" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

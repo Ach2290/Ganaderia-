@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bc_green"
+    android:backgroundTint="@color/bc_green"
+    tools:context=".RegistroActivity">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="547dp"
+            android:background="@drawable/fondo_verde_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="197dp" />
+
+        <ImageView
+            android:id="@+id/IVlogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logop"
+            app:layout_constraintBottom_toTopOf="@id/image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/TViniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rounded"
+            android:text="REGRISTRO"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/titulo2"
+            app:layout_constraintStart_toStartOf="@+id/anchoET1"
+            app:layout_constraintTop_toBottomOf="@+id/titulo1" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ETcorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/borde_verde"
+            android:backgroundTint="@color/black"
+            android:hint="INTRODUZCA SU CORREO ELECTÓNICO"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hint_white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/anchoET1"
+            app:layout_constraintEnd_toStartOf="@id/anchoET2"
+            app:layout_constraintTop_toBottomOf="@id/titulo2"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contrasena"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/borde_verde"
+            android:backgroundTint="@color/black"
+            android:hint="INTRODUZCA SU CONTRASEÑA"
+            android:padding="10dp"
+
+            android:textColor="@color/white"
+            android:textColorHint="@color/hint_white"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toEndOf="@id/anchoET1"
+            app:layout_constraintEnd_toStartOf="@id/anchoET2"
+            app:layout_constraintTop_toBottomOf="@id/ETcorreo"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/repetir_contrasena"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/borde_verde"
+            android:backgroundTint="@color/black"
+            android:hint="REPITA SU CONTRASEÑA"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hint_white"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintEnd_toStartOf="@id/anchoET2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/anchoET1"
+            app:layout_constraintTop_toBottomOf="@+id/contrasena" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nombre_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/borde_verde"
+            android:backgroundTint="@color/black"
+            android:hint="INTRODUZCA UN NOMBRE DE USUARIO"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hint_white"
+            android:textCursorDrawable="@drawable/cursor_color"
+            app:layout_constraintEnd_toStartOf="@id/anchoET2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/anchoET1"
+            app:layout_constraintTop_toBottomOf="@+id/repetir_contrasena" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/titulo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/titulo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/GLbtn_entrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/anchoET1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/anchoET2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="218dp"
+            android:layout_height="45dp"
+            android:fontFamily="@font/rounded"
+            android:textSize="20dp"
+            android:text="REGISTRARSE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/anchoET2"
+            app:layout_constraintStart_toStartOf="@+id/anchoET1"
+            app:layout_constraintTop_toBottomOf="@+id/nombre_usuario" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
