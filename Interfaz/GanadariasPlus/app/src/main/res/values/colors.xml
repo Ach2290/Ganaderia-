@@ -5,8 +5,9 @@
     <color name="hint_white">#BFFFFFFF</color>
     <color name="transparet">#00FFFFFF</color>
     <color name="bc_green">#344E41</color>
+    <color name="bc_green_transp">#1F344E41</color>
     <color name="imp_green">#ABD777</color>
     <color name="imp_green_transp">#1FABD777</color>
-    <color name="card_green">#3F8847</color>
+    <color name="card_green">#64A46C</color>
 
 </resources>

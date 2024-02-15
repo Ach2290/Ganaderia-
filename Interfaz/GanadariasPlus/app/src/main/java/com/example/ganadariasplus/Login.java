@@ -16,10 +16,20 @@ public class Login extends AppCompatActivity {
 
         TextView btn_entrar = findViewById(R.id.btn_entrar);
 
+        TextView btn_regsitro = findViewById(R.id.btn_registro);
+
         btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this, Principal.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_regsitro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, RegistroActivity.class);
                 startActivity(intent);
             }
         });

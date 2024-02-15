@@ -40,7 +40,7 @@
                     android:id="@+id/idExplotacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/imp_green"
                     android:layout_weight="1"
                     android:gravity="left"
                     android:paddingTop="10dp"
@@ -53,7 +53,7 @@
                     android:id="@+id/nombreExplotacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@color/bc_green"
 
                     android:layout_weight="1"
                     android:gravity="left"
