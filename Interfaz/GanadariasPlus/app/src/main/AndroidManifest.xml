@@ -15,6 +15,11 @@
         <activity
             android:name=".Explotacion"
             android:exported="false" />
+
+        <activity
+            android:name=".movimiento"
+            android:exported="false" />
+
         <activity
             android:name=".RegistroActivity"
             android:exported="false" />
