@@ -1,6 +1,7 @@
 package com.example.ganadariasplus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,11 +47,21 @@ public class ExplotacionAdapter extends RecyclerView.Adapter<ExplotacionAdapter.
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView id, nombre;
+        CardView cardView;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             id = itemView.findViewById(R.id.idExplotacion);
             nombre = itemView.findViewById(R.id.nombreExplotacion);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext() , Explotacion.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }
