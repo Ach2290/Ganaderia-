@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bc_green"
+    tools:context=".movimiento">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_verde_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/h1" />
+
+    <TextView
+        android:id="@+id/destino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rounded"
+        android:text="DATOS DE DESTINO"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tipo"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/h1" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tipo"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:hint="TIPO DE MOVIMIENTO"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/id_exp"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/destino" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/id_exp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:hint="ID EXPLOTACIÓN"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/N_exp"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/tipo" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/N_exp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:hint="NOMBRE EXPLOTACION"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/dire"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/id_exp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/dire"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:hint="DIRECCIÓN"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/tel"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/N_exp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tel"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:hint="TELÉFONO"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/añadir"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/dire" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/añadir"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/borde_verde_orscuro"
+        android:drawableRight="@drawable/anadir_animal"
+        android:hint="AÑADIR ANIMALES "
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint_white"
+        app:layout_constraintBottom_toTopOf="@+id/button_registrarse"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toBottomOf="@+id/tel" />
+
+    <Button
+        android:id="@+id/button_registrarse"
+        android:layout_width="302dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="52dp"
+        android:fontFamily="@font/rounded"
+        android:text="REALIZAR MOVIMIENTO"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintTop_toBottomOf="@+id/añadir" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="138dp"
+        android:background="@drawable/fondo_verde_view"
+        app:layout_constraintBottom_toTopOf="@+id/h2"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/procedencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/rounded"
+        android:text="EXPLOTACIÓN DE PROCEDENCIA"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/v1"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="361dp"
+        android:layout_height="17dp"
+        android:text="Nº: ES060700002412"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/procedencia" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="361dp"
+        android:layout_height="17dp"
+        android:text="GALLO PITO"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="361dp"
+        android:layout_height="17dp"
+        android:text="JEREZ DE LOS CABALLEROS, BADAJOZ"
+        app:layout_constraintEnd_toStartOf="@+id/v2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:drawableLeft="@drawable/icono_ubicacion"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
