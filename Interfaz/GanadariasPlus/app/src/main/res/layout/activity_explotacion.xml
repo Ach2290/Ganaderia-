@@ -40,8 +40,6 @@
         app:layout_constraintStart_toEndOf="@id/verticalSearch"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
-
     <View
         android:id="@+id/viewAnimales"
         android:layout_width="wrap_content"
@@ -51,6 +49,74 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bottomImage"/>
+
+    <TextView
+        android:id="@+id/tv_nombreExplotacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE EXPLOTACION"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="@font/rounded"
+        app:layout_constraintTop_toBottomOf="@+id/bottomImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        app:backgroundTint="@color/bc_green"
+        app:layout_constraintBottom_toTopOf="@id/tv_idExplotacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/verticalButton" />
+
+    <TextView
+        android:id="@+id/tv_idExplotacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID EXPLOTACION"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombreExplotacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/icono_ubica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icono_ubicacion"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ubicaExplotacion"
+        app:layout_constraintTop_toBottomOf="@+id/tv_idExplotacion"/>
+
+    <TextView
+        android:id="@+id/tv_ubicaExplotacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UBICACION EXPLOTACION"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintTop_toBottomOf="@+id/tv_idExplotacion"
+        app:layout_constraintStart_toEndOf="@id/icono_ubica"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_ubicaExplotacion"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomImage"
@@ -65,6 +131,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
