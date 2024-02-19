@@ -4,10 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class Login extends AppCompatActivity {
+import com.example.ganadariasplus.retrofit.model.Ganadero;
+import com.example.ganadariasplus.retrofit.ApiAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Login extends AppCompatActivity implements Callback<ArrayList<Ganadero>> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +44,9 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Call<List<Ganadero>> call = ApiAdapter.getApiService().getGanaderos();
+        call.enqueue(this);
     }
+
 }
