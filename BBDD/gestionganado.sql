@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2024 a las 13:31:46
+-- Tiempo de generación: 20-02-2024 a las 13:42:12
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -27,8 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `animal`
 --
-CREATE DATABASE gestionganado;
-USE gestionganado;
+
 CREATE TABLE `animal` (
   `id` int(11) NOT NULL,
   `especie` varchar(30) NOT NULL,
@@ -106,19 +105,27 @@ INSERT INTO `explotacion` (`id`, `nombre`, `ubicacion`, `tipo_animal`, `capacida
 CREATE TABLE `ganadero` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `direccion` varchar(30) NOT NULL,
-  `telefono` varchar(9) NOT NULL,
-  `correo` varchar(30) NOT NULL
+  `direccion` varchar(30) DEFAULT NULL,
+  `telefono` varchar(9) DEFAULT NULL,
+  `correo` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ganadero`
 --
 
-INSERT INTO `ganadero` (`id`, `nombre`, `direccion`, `telefono`, `correo`) VALUES
-(1, 'Pedro', 'Direccion 3', '987654321', 'correo3@example.com'),
-(2, 'Juan Pérez', 'Calle 123, Ciudad', '555-1234', 'juan@example.com'),
-(3, 'María Rodríguez', 'Avenida 456, Ciudad', '555-5678', 'maria@example.com');
+INSERT INTO `ganadero` (`id`, `nombre`, `direccion`, `telefono`, `correo`, `password`) VALUES
+(1, 'Pedro', 'Direccion 3', '987654321', 'correo3@example.com', ''),
+(2, 'Juan Pérez', 'Calle 123, Ciudad', '555-1234', 'juan@example.com', ''),
+(3, 'María Rodríguez', 'Avenida 456, Ciudad', '555-5678', 'maria@example.com', ''),
+(4, 'Gonzalo', NULL, NULL, 'holaquetal', ''),
+(5, 'asdfasdfasdf', NULL, NULL, 'asdfasdfasd', ''),
+(6, 'qwerty', NULL, NULL, 'qwerty', '1234'),
+(7, 'asdfghjk', NULL, NULL, 'asdfghjk', '1234'),
+(8, '', NULL, NULL, 'Pedro', ''),
+(9, 'Ruben', NULL, NULL, 'correo3@example.com', '123456789'),
+(10, 'Carlos', NULL, NULL, 'qasdfasdfasdfasdfasdf', '1');
 
 -- --------------------------------------------------------
 
@@ -229,7 +236,7 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT de la tabla `ganadero`
 --
 ALTER TABLE `ganadero`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `matadero`
