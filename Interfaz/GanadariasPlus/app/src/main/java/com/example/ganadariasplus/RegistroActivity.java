@@ -26,8 +26,6 @@ import retrofit2.Response;
 
 public class RegistroActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +59,7 @@ public class RegistroActivity extends AppCompatActivity {
                         if (contraIntroducido.equals(contrarepetirIntroducido)){
                             if(!response.body().toString().isEmpty()){
                                 Toast.makeText(RegistroActivity.this, "USUARIO REGISTRADO", Toast.LENGTH_SHORT).show();
-                                Toast.makeText(RegistroActivity.this, response.body().getNombre(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistroActivity.this, "BIENVENIDO " + response.body().getNombre(), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(RegistroActivity.this, Principal.class);
                                 startActivity(intent);
                             }else {

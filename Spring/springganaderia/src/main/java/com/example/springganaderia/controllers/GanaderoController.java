@@ -17,6 +17,9 @@ public class GanaderoController {
     @GetMapping("/all")
     public List<Ganadero> getAllGanaderos() { return ganaderoService.getAllGanaderos();}
 
+    @GetMapping("/byId/{id}")
+    public Ganadero getById(@PathVariable Integer id) { return ganaderoService.getById(id);}
+
     @PostMapping("/login/{correo}")
     public  List<Ganadero> login(@PathVariable String correo) { return ganaderoService.logIn(correo);}
 

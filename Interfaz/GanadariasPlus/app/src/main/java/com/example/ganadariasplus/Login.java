@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Login extends AppCompatActivity implements Callback<List<Ganadero>> {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,19 +55,24 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
                             if(ganaderos.get(0).getCorreo().equals(correoIntroducido) && ganaderos.get(0).getPassword().equals(contraIntroducido)){
                                 SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
-                                editor.putInt("idGanadeo", ganaderos.get(0).getId());
+                                editor.putInt("idGanadero", ganaderos.get(0).getId());
                                 Intent intent = new Intent(Login.this, Principal.class);
                                 startActivity(intent);
                             }
-                        }else {
+                        }else if (!ganaderos.get(0).getCorreo().equals(correoIntroducido)) {
                             Toast.makeText(Login.this, "USUARIO NO ENCONTRADO", Toast.LENGTH_SHORT).show();
+
+                        }else if (!ganaderos.get(0).getPassword().equals(contraIntroducido)) {
+                            Toast.makeText(Login.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(Login.this, "USUARIO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show();
                         }
 
                     }
 
                     @Override
                     public void onFailure(Call<List<Ganadero>> call, Throwable t) {
-                        Toast.makeText(Login.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "ERROR AL CONECTAR CON EL SERVIDOR", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -84,13 +89,4 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
         });
     }
 
-    @Override
-    public void onResponse(Call<List<Ganadero>> call, Response<List<Ganadero>> response) {
-        Log.d("APICALL: GANADEROS", String.valueOf(response));
-    }
-
-    @Override
-    public void onFailure(Call<List<Ganadero>> call, Throwable t) {
-        Log.d("Fallo", t.getMessage());
-    }
 }

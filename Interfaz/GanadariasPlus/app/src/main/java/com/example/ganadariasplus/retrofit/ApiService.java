@@ -1,5 +1,7 @@
 package com.example.ganadariasplus.retrofit;
 
+import android.content.Intent;
+
 import retrofit2.Call;
 
 import com.example.ganadariasplus.retrofit.model.Ganadero;
@@ -21,6 +23,9 @@ public interface ApiService {
 
     @GET("ganadero/all")
     Call <List<Ganadero>> getGanaderos();
+
+    @GET("ganadero/byId/{id}")
+    Call <Ganadero> loadPerfil(@Path("id")Integer id);
 
     @POST("ganadero/login/{correo}")
     Call <List<Ganadero>> loginCorreo(@Path("correo") String correo);
