@@ -15,5 +15,7 @@ public class GanaderoService {
 
     public List<Ganadero> getAllGanaderos() { return ganaderoRepository.findAll();}
 
-    
+    public List<Ganadero> logIn(String ganaderoCorreo) {return  ganaderoRepository.obtenerGanaderoPorCorreo(ganaderoCorreo);}
+
+    public Ganadero registro()
 }

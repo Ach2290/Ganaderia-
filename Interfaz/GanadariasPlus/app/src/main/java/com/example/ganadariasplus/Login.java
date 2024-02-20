@@ -2,14 +2,18 @@ package com.example.ganadariasplus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ganadariasplus.retrofit.model.Ganadero;
 import com.example.ganadariasplus.retrofit.ApiAdapter;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,7 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -29,11 +34,42 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
 
         TextView btn_regsitro = findViewById(R.id.btn_registro);
 
+        TextInputEditText correo = findViewById(R.id.ETcorreo);
+
         btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, Principal.class);
-                startActivity(intent);
+                String correoIntroducido = correo.getText().toString();
+
+                Call <List<Ganadero>> call = ApiAdapter.getApiService().login(correoIntroducido);
+                call.enqueue(new Callback<List<Ganadero>>() {
+                    @Override
+                    public void onResponse(Call<List<Ganadero>> call, Response<List<Ganadero>> response) {
+
+                        List<Ganadero> ganaderos = response.body();
+
+
+                        if(ganaderos.size() > 0){
+                            if(ganaderos.get(0).getCorreo().equals(correoIntroducido)){
+                                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putInt("idGanadeo", ganaderos.get(0).getId());
+                                Intent intent = new Intent(Login.this, Principal.class);
+                                startActivity(intent);
+                            }
+                        }else {
+                            Toast.makeText(Login.this, "USUARIO NO ENCONTRADO", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Ganadero>> call, Throwable t) {
+                        Toast.makeText(Login.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
             }
         });
 
@@ -44,9 +80,6 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
                 startActivity(intent);
             }
         });
-
-        Call <List<Ganadero>> call = ApiAdapter.getApiService().getGanaderos();
-        call.enqueue(this);
     }
 
     @Override
