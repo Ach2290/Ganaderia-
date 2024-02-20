@@ -14,4 +14,6 @@ public class GanaderoService {
     private GanaderoRepository ganaderoRepository;
 
     public List<Ganadero> getAllGanaderos() { return ganaderoRepository.findAll();}
+
+    
 }

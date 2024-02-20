@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Login extends AppCompatActivity implements Callback<ArrayList<Ganadero>> {
+public class Login extends AppCompatActivity implements Callback<List<Ganadero>> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,17 @@ public class Login extends AppCompatActivity implements Callback<ArrayList<Ganad
             }
         });
 
-        Call<List<Ganadero>> call = ApiAdapter.getApiService().getGanaderos();
+        Call <List<Ganadero>> call = ApiAdapter.getApiService().getGanaderos();
         call.enqueue(this);
     }
 
+    @Override
+    public void onResponse(Call<List<Ganadero>> call, Response<List<Ganadero>> response) {
+        Log.d("APICALL: GANADEROS", String.valueOf(response));
+    }
+
+    @Override
+    public void onFailure(Call<List<Ganadero>> call, Throwable t) {
+        Log.d("Fallo", t.getMessage());
+    }
 }
