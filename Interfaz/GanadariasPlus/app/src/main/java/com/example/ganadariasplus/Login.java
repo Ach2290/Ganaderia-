@@ -35,13 +35,15 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
         TextView btn_regsitro = findViewById(R.id.btn_registro);
 
         TextInputEditText correo = findViewById(R.id.ETcorreo);
+        TextInputEditText password = findViewById(R.id.ETcontrasena);
 
         btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String correoIntroducido = correo.getText().toString();
+                String contraIntroducido = password.getText().toString();
 
-                Call <List<Ganadero>> call = ApiAdapter.getApiService().login(correoIntroducido);
+                Call <List<Ganadero>> call = ApiAdapter.getApiService().loginCorreo(correoIntroducido);
                 call.enqueue(new Callback<List<Ganadero>>() {
                     @Override
                     public void onResponse(Call<List<Ganadero>> call, Response<List<Ganadero>> response) {
@@ -50,7 +52,7 @@ public class Login extends AppCompatActivity implements Callback<List<Ganadero>>
 
 
                         if(ganaderos.size() > 0){
-                            if(ganaderos.get(0).getCorreo().equals(correoIntroducido)){
+                            if(ganaderos.get(0).getCorreo().equals(correoIntroducido) && ganaderos.get(0).getPassword().equals(contraIntroducido)){
                                 SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("idGanadeo", ganaderos.get(0).getId());

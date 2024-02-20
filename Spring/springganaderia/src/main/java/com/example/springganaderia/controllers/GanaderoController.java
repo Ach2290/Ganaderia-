@@ -19,4 +19,15 @@ public class GanaderoController {
 
     @PostMapping("/login/{correo}")
     public  List<Ganadero> login(@PathVariable String correo) { return ganaderoService.logIn(correo);}
+
+    @PostMapping("/loginNombre/{nombre}")
+    public  String loginNombre(@PathVariable String nombre) {
+        System.err.println(nombre);
+        return "NOMBRE DE USUARIO YA REGISTRADO";
+    }
+
+    @PostMapping("/registro")
+    public Ganadero registro(@RequestBody Ganadero ganadero) {
+        System.err.println(ganadero);
+        return ganaderoService.registro(ganadero);}
 }

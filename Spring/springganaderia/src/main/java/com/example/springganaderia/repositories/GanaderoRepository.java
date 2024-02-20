@@ -13,4 +13,7 @@ public interface GanaderoRepository extends JpaRepository<Ganadero, Integer> {
 
     @Query("SELECT a FROM Ganadero a WHERE a.correo = ?1")
     List<Ganadero> obtenerGanaderoPorCorreo(String ganaderoCorreo);
+
+    @Query("SELECT a FROM Ganadero a WHERE a.nombre = ?1")
+    List<Ganadero> obtenerGanaderoPorNombre(String ganaderoNombre);
 }

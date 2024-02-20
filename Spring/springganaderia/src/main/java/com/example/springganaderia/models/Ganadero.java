@@ -29,4 +29,7 @@ public class Ganadero {
 
     @Column(name="correo")
     private String correo;
+
+    @Column(name="password")
+    private String password;
 }
