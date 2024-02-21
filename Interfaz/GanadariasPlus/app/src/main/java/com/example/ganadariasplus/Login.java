@@ -53,9 +53,10 @@ public class Login extends AppCompatActivity {
 
                         if (ganaderos.size() > 0) {
                             if (ganaderos.get(0).getCorreo().equals(correoIntroducido) && ganaderos.get(0).getPassword().equals(contraIntroducido)) {
-                                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("idGanadero", ganaderos.get(0).getId());
+                                editor.commit();
                                 Intent intent = new Intent(Login.this, Principal.class);
                                 startActivity(intent);
                             } else if (!ganaderos.get(0).getCorreo().equals(correoIntroducido)) {

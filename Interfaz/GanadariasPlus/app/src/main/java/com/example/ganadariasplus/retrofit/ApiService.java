@@ -4,6 +4,8 @@ import android.content.Intent;
 
 import retrofit2.Call;
 
+import com.example.ganadariasplus.Explotacion;
+import com.example.ganadariasplus.ExplotacionModel;
 import com.example.ganadariasplus.retrofit.model.Ganadero;
 
 import org.json.JSONObject;
@@ -36,6 +38,9 @@ public interface ApiService {
     @POST("ganadero/registro")
     Call <Ganadero> registro(@Body Ganadero ganadero);
 
-    @POST("ganadero/udateGanadero")
+    @POST("ganadero/updateGanadero")
     Call <Ganadero> update(@Body Ganadero ganadero);
+
+    @GET("explotacion/by_id_ganadero/{id_ganadero}")
+    Call <List<ExplotacionModel>> byIdGanadero(@Path("id_ganadero") Integer idGanadero);
 }

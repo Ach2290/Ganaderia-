@@ -39,7 +39,7 @@ public class ThirdFragmentUsuario extends Fragment {
         TextInputEditText direccion = rootView.findViewById(R.id.direccion);
         TextInputEditText password = rootView.findViewById(R.id.contraseña);
 //
-        SharedPreferences sharedPref = this.getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
         int idGanadero = sharedPref.getInt("idGanadero", 1);
 //
         Call<Ganadero> call = ApiAdapter.getApiService().loadPerfil(idGanadero);
@@ -52,6 +52,39 @@ public class ThirdFragmentUsuario extends Fragment {
                 telefono.setText(response.body().getTelefono());
                 direccion.setText(response.body().getDireccion());
                 password.setText(response.body().getPassword());
+
+                Button btn_actualizar = rootView.findViewById(R.id.btn_actualizar);
+
+                btn_actualizar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Ganadero ganaderoUpdate = new Ganadero();
+                        ganaderoUpdate.setId(idGanadero);
+                        ganaderoUpdate.setNombre(nombre.getText().toString());
+                        ganaderoUpdate.setCorreo(correo.getText().toString());
+                        ganaderoUpdate.setTelefono(telefono.getText().toString());
+                        ganaderoUpdate.setDireccion(direccion.getText().toString());
+                        ganaderoUpdate.setPassword(password.getText().toString());
+
+                        Call<Ganadero> call = ApiAdapter.getApiService().update(ganaderoUpdate);
+                        call.enqueue(new Callback<Ganadero>() {
+
+                            @Override
+                            public void onResponse(Call<Ganadero> call, Response<Ganadero> response) {
+                                nombre.setText(response.body().getNombre().toUpperCase());
+                                correo.setText(response.body().getCorreo());
+                                telefono.setText(response.body().getTelefono());
+                                direccion.setText(response.body().getDireccion());
+                                password.setText(response.body().getPassword());
+                            }
+
+                            @Override
+                            public void onFailure(Call<Ganadero> call, Throwable t) {
+
+                            }
+                        });
+                    }
+                });
             }
 
             @Override
@@ -60,41 +93,6 @@ public class ThirdFragmentUsuario extends Fragment {
 
             }
         });
-
-        Ganadero ganaderoUpdate = new Ganadero();
-
-        ganaderoUpdate.setId(idGanadero);
-        ganaderoUpdate.setCorreo(correo.getText().toString());
-        ganaderoUpdate.setTelefono(telefono.getText().toString());
-        ganaderoUpdate.setDireccion(direccion.getText().toString());
-        ganaderoUpdate.setPassword(password.getText().toString());
-
-        Button btn_actualizar = rootView.findViewById(R.id.btn_actualizar);
-
-        btn_actualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Call<Ganadero> call = ApiAdapter.getApiService().update(ganaderoUpdate);
-                call.enqueue(new Callback<Ganadero>() {
-
-                    @Override
-                    public void onResponse(Call<Ganadero> call, Response<Ganadero> response) {
-                        nombre.setText(response.body().getNombre().toUpperCase());
-                        correo.setText(response.body().getCorreo());
-                        telefono.setText(response.body().getTelefono());
-                        direccion.setText(response.body().getDireccion());
-                        password.setText(response.body().getPassword());
-                    }
-
-                    @Override
-                    public void onFailure(Call<Ganadero> call, Throwable t) {
-
-                    }
-                });
-            }
-        });
-
-
 
         return rootView;
     }
