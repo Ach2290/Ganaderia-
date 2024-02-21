@@ -2,6 +2,7 @@ package com.example.springganaderia.controllers;
 
 import com.example.springganaderia.models.Ganadero;
 import com.example.springganaderia.services.GanaderoService;
+import jakarta.persistence.PostUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,4 +34,7 @@ public class GanaderoController {
     public Ganadero registro(@RequestBody Ganadero ganadero) {
         System.err.println(ganadero);
         return ganaderoService.registro(ganadero);}
+
+    @PostMapping("/updateGanadero")
+    public Ganadero updateCorreo(@RequestBody Ganadero ganadero) { return ganaderoService.updateGanadero(ganadero);}
 }

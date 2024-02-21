@@ -18,7 +18,9 @@ public class GanaderoService {
     public Ganadero getById(Integer id) { return ganaderoRepository.findById(id).get();}
 
     public List<Ganadero> logIn(String ganaderoCorreo) {return  ganaderoRepository.obtenerGanaderoPorCorreo(ganaderoCorreo);}
+
     public List<Ganadero> logInNombre(String nombre) {return  ganaderoRepository.obtenerGanaderoPorNombre(nombre);}
 
     public Ganadero registro(Ganadero ganadero){return ganaderoRepository.save(ganadero);}
+    public Ganadero updateGanadero(Ganadero ganadero){return ganaderoRepository.save(ganadero);}
 }

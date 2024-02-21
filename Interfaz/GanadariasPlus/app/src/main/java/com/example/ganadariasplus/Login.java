@@ -51,23 +51,25 @@ public class Login extends AppCompatActivity {
                         List<Ganadero> ganaderos = response.body();
 
 
-                        if(ganaderos.size() > 0){
-                            if(ganaderos.get(0).getCorreo().equals(correoIntroducido) && ganaderos.get(0).getPassword().equals(contraIntroducido)){
+                        if (ganaderos.size() > 0) {
+                            if (ganaderos.get(0).getCorreo().equals(correoIntroducido) && ganaderos.get(0).getPassword().equals(contraIntroducido)) {
                                 SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putInt("idGanadero", ganaderos.get(0).getId());
                                 Intent intent = new Intent(Login.this, Principal.class);
                                 startActivity(intent);
+                            } else if (!ganaderos.get(0).getCorreo().equals(correoIntroducido)) {
+                                Toast.makeText(Login.this, "USUARIO NO ENCONTRADO", Toast.LENGTH_SHORT).show();
+
+                            } else if (!ganaderos.get(0).getPassword().equals(contraIntroducido)) {
+                                Toast.makeText(Login.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(Login.this, "USUARIO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show();
                             }
-                        }else if (!ganaderos.get(0).getCorreo().equals(correoIntroducido)) {
-                            Toast.makeText(Login.this, "USUARIO NO ENCONTRADO", Toast.LENGTH_SHORT).show();
 
-                        }else if (!ganaderos.get(0).getPassword().equals(contraIntroducido)) {
-                            Toast.makeText(Login.this, "CONTRASEÑA INCORRECTA", Toast.LENGTH_SHORT).show();
                         }else {
-                            Toast.makeText(Login.this, "USUARIO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "USUARIO NO ENCONTRADO", Toast.LENGTH_SHORT).show();
                         }
-
                     }
 
                     @Override

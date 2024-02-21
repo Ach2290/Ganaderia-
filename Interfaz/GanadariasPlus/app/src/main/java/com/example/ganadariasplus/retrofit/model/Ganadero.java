@@ -3,7 +3,7 @@ package com.example.ganadariasplus.retrofit.model;
 public class Ganadero {
     private int id;
     private String nombre;
-    private String direcion;
+    private String direccion;
     private String telefono;
     private String correo;
     private String password;
@@ -32,12 +32,12 @@ public class Ganadero {
         this.nombre = nombre;
     }
 
-    public String getDirecion() {
-        return direcion;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirecion(String direcion) {
-        this.direcion = direcion;
+    public void setDireccion(String direcion) {
+        this.direccion = direcion;
     }
 
     public String getTelefono() {

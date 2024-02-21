@@ -35,4 +35,7 @@ public interface ApiService {
 
     @POST("ganadero/registro")
     Call <Ganadero> registro(@Body Ganadero ganadero);
+
+    @POST("ganadero/udateGanadero")
+    Call <Ganadero> update(@Body Ganadero ganadero);
 }
