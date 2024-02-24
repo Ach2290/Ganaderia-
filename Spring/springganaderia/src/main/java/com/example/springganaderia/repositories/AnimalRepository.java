@@ -12,7 +12,7 @@ import java.util.List;
 public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 
     @Query("SELECT a FROM Animal a WHERE a.id_explotacion = ?1")
-    List<Animal> obtenerAnimalesPorIdExplotacion(Integer explotacionId);
+    List<Animal> obtenerAnimalesPorIdExplotacion(Integer id_explotacion);
 
     @Query("SELECT a FROM Animal a WHERE a.id_explotacion = ?1 AND a.id = ?2")
     List<Animal> obtenerAnimalesPorId(Integer explotacionId, Integer id);

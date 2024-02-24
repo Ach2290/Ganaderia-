@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import retrofit2.Call;
 
+import com.example.ganadariasplus.AnimalModel;
 import com.example.ganadariasplus.Explotacion;
 import com.example.ganadariasplus.ExplotacionModel;
 import com.example.ganadariasplus.Movimiento;
@@ -51,4 +52,7 @@ public interface ApiService {
 
     @GET("movimiento/by_id_ganadero/{id_ganadero}")
     Call<List<MovimientoModel>> movimientoByIdGanadero(@Path("id_ganadero") Integer id_ganadero);
+
+    @GET("animal/by_id_explotacion/{id_explotacion}")
+    Call<List<AnimalModel>> abinamByIdExplotacion(@Path("id_explotacion") Integer id_explotacion);
 }

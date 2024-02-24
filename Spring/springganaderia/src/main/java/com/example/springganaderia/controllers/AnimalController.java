@@ -22,8 +22,8 @@ public class AnimalController {
     @GetMapping("/all")
     public List<Animal> getAllAnimales() { return animalServices.getAllAnimales();}
 
-    @GetMapping("/by_id_explotacion/{id}")
-    public List<Animal> getAnimalesByIdExplotacion(@PathVariable Integer id) { return animalServices.getAnimalesByIdExplotacion(id);}
+    @GetMapping("/by_id_explotacion/{id_explotacion}")
+    public List<Animal> getAnimalesByIdExplotacion(@PathVariable Integer id_explotacion) { return animalServices.getAnimalesByIdExplotacion(id_explotacion);}
 
     @GetMapping("/by_id/{idexplotacion}/{idanimal}")
     public List<Animal> getAnimalesById(@PathVariable Integer idexplotacion, @PathVariable Integer idanimal) { return animalServices.getAnimalesById(idexplotacion, idanimal);}

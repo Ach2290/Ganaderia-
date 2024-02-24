@@ -15,7 +15,7 @@ public class AnimalServices {
 
     public List<Animal> getAllAnimales() { return animalRepository.findAll();}
 
-    public List<Animal> getAnimalesByIdExplotacion(Integer id){ return animalRepository.obtenerAnimalesPorIdExplotacion(id);}
+    public List<Animal> getAnimalesByIdExplotacion(Integer id_explotacion){ return animalRepository.obtenerAnimalesPorIdExplotacion(id_explotacion);}
 
     public List<Animal> getAnimalesById(Integer idexplotacion, Integer idanimal){ return animalRepository.obtenerAnimalesPorId(idexplotacion, idanimal);}
 
