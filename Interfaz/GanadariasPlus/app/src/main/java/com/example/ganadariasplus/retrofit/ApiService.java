@@ -6,6 +6,8 @@ import retrofit2.Call;
 
 import com.example.ganadariasplus.Explotacion;
 import com.example.ganadariasplus.ExplotacionModel;
+import com.example.ganadariasplus.Movimiento;
+import com.example.ganadariasplus.MovimientoModel;
 import com.example.ganadariasplus.retrofit.model.Ganadero;
 
 import org.json.JSONObject;
@@ -43,4 +45,10 @@ public interface ApiService {
 
     @GET("explotacion/by_id_ganadero/{id_ganadero}")
     Call <List<ExplotacionModel>> byIdGanadero(@Path("id_ganadero") Integer idGanadero);
+
+    @GET("explotacion/by_id/{id}")
+    Call<ExplotacionModel> byIdExplotacion(@Path("id") Integer id);
+
+    @GET("movimiento/by_id_ganadero/{id_ganadero}")
+    Call<List<MovimientoModel>> movimientoByIdGanadero(@Path("id_ganadero") Integer id_ganadero);
 }

@@ -2,6 +2,7 @@ package com.example.ganadariasplus;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,12 @@ public class ExplotacionAdapter extends RecyclerView.Adapter<ExplotacionAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    SharedPreferences sharedPref = itemView.getContext().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("idExplotacion", id.getText().toString());
+                    editor.commit();
+
                     Intent intent = new Intent(v.getContext() , Explotacion.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     v.getContext().startActivity(intent);

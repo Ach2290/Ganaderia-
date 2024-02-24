@@ -5,6 +5,8 @@ public class ExplotacionModel {
     public String id;
     public String nombre;
     public String idganadero;
+
+    public String ubicacion;
     public boolean clicked;
 
     public String getIdganadero() {
@@ -19,6 +21,14 @@ public class ExplotacionModel {
 
         this.id = id;
         this.nombre = nombre;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public String getId() {
