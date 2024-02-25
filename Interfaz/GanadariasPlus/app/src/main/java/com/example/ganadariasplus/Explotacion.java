@@ -93,7 +93,7 @@ public class Explotacion extends AppCompatActivity {
         SharedPreferences sharedPref = this.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
         int idExplotacion = Integer.parseInt(sharedPref.getString("idExplotacion", "1"));
 
-        Call<List<AnimalModel>> call = ApiAdapter.getApiService().abinamByIdExplotacion(idExplotacion);
+        Call<List<AnimalModel>> call = ApiAdapter.getApiService().animalByIdExplotacion(idExplotacion);
         call.enqueue(new Callback<List<AnimalModel>>() {
 
             @Override

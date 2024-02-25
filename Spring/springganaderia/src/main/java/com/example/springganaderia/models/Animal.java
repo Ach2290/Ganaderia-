@@ -24,7 +24,7 @@ public class Animal {
     private Integer id;
 
     @Column(name="especie")
-    private String nombre;
+    private String especie;
 
     @Column(name="sexo")
     private String sexo;

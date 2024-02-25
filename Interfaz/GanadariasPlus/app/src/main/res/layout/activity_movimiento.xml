@@ -178,7 +178,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewIdExplotacion"
         android:layout_width="361dp"
         android:layout_height="17dp"
         android:text="Nº: ES060700002412"

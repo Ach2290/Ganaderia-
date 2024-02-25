@@ -16,6 +16,6 @@ public interface AnimalRepository extends JpaRepository<Animal,Integer>{
     List<Animal>obtenerAnimalesPorIdExplotacion(Integer id_explotacion);
 
     // Consulta personalizada para obtener una lista de animales filtrados por el ID de explotación y el ID del animal.
-    @Query("SELECT a FROM Animal a WHERE a.id_explotacion =?1 a.id = ?2")
+    @Query("SELECT a FROM Animal a WHERE a.id_explotacion =?1 AND a.id = ?2")
     List<Animal> obtenerAnimalesPorId(Integer explotacionId, Integer id);
 }

@@ -39,8 +39,6 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
 
         holder.id.setText(animalModels.get(position).getId());
         holder.tipo.setText(animalModels.get(position).getEspecie());
-        holder.edad.setText(animalModels.get(position).getEdad());
-        holder.sexo.setText(animalModels.get(position).getSexo());
 
     }
 
@@ -54,10 +52,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
-            id = itemView.findViewById(R.id.tv_idAnimal);
-            tipo = itemView.findViewById(R.id.tv_tipoAnimal);
-            edad = itemView.findViewById(R.id.tv_fechaAnimal);
-            sexo = itemView.findViewById(R.id.tv_sexoAnimal);
+            id = itemView.findViewById(R.id.idAnimal);
+            tipo = itemView.findViewById(R.id.tipoAnimal);
         }
     }
 }

@@ -54,5 +54,5 @@ public interface ApiService {
     Call<List<MovimientoModel>> movimientoByIdGanadero(@Path("id_ganadero") Integer id_ganadero);
 
     @GET("animal/by_id_explotacion/{id_explotacion}")
-    Call<List<AnimalModel>> abinamByIdExplotacion(@Path("id_explotacion") Integer id_explotacion);
+    Call<List<AnimalModel>> animalByIdExplotacion(@Path("id_explotacion") Integer id_explotacion);
 }
