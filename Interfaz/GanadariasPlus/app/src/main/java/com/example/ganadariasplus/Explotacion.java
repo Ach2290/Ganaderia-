@@ -8,9 +8,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ganadariasplus.retrofit.ApiAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -63,12 +65,19 @@ public class Explotacion extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerAnimales);
 
-        setAnimalModel();
+        if(animalModels.size() == 0){
+            setAnimalModel();
+            Toast.makeText(this, "" + animalModels.size(), Toast.LENGTH_SHORT).show();
+        }
 
+        if (animalModels != null && !animalModels.isEmpty()) {
+            AnimalAdapter adapter = new AnimalAdapter(this, animalModels);
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        AnimalAdapter adapter = new AnimalAdapter(this, animalModels);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        } else {
+            Log.d("AnimalAdapter", "La lista animalModels es nula o vacía");
+        }
 
 
         btn_atras.setOnClickListener(new View.OnClickListener() {
@@ -115,5 +124,9 @@ public class Explotacion extends AppCompatActivity {
 
             }
         });
+
+        Toast.makeText(Explotacion.this, "segundo" +animalModels.size(), Toast.LENGTH_SHORT).show();
+
+
     }
 }

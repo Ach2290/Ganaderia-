@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +26,19 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
     public AnimalAdapter(Context context, ArrayList<AnimalModel> animalModels){
         this.context = context;
         this.animalModels = animalModels;
+
+        Log.d("AnimalAdapter", "Constructor llamado con contexto: " + context.toString());
+
     }
     @NonNull
     @Override
     public AnimalAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.cv_animal, parent, false);
+
+
+        Log.d("AnimalAdapter", "onCreateViewHolder llamado");
+
         return new AnimalAdapter.MyViewHolder(view);
     }
 
@@ -39,6 +47,9 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
 
         holder.id.setText(animalModels.get(position).getId());
         holder.tipo.setText(animalModels.get(position).getEspecie());
+
+        Log.d("AnimalAdapter", "onBindViewHolder llamado para la posición: " + position);
+
 
     }
 
@@ -54,6 +65,10 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
             super(itemView);
             id = itemView.findViewById(R.id.idAnimal);
             tipo = itemView.findViewById(R.id.tipoAnimal);
+
+            Log.d("AnimalAdapter", "MyViewHolder constructor llamado");
+
         }
     }
 }
+
