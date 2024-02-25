@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface ExplotacionRepository extends JpaRepository<Explotacion, Integer> {
 
+    // Consulta personalizada para obtener una lista de explotaciones ganaderas filtradas por el ID del ganadero.
     @Query("SELECT e FROM Explotacion e WHERE e.id_ganadero = ?1")
     List<Explotacion> obtenerExplotacionesPorIdGanadero( Integer ganaderoId);
 

@@ -11,9 +11,12 @@ import java.util.List;
 @Repository
 public interface GanaderoRepository extends JpaRepository<Ganadero, Integer> {
 
-    @Query("SELECT a FROM Ganadero a WHERE a.correo = ?1")
+    // Consulta personalizada para obtener una lista de ganaderos filtrados por su correo electrónico.
+    @Query("SELECT a FROM Ganadero a WHERE a.correo =?1")
     List<Ganadero> obtenerGanaderoPorCorreo(String ganaderoCorreo);
 
+    // Consulta personalizada para obtener una lista de ganaderos filtrados por su nombre.
     @Query("SELECT a FROM Ganadero a WHERE a.nombre = ?1")
     List<Ganadero> obtenerGanaderoPorNombre(String ganaderoNombre);
 }
+

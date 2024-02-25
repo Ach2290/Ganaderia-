@@ -11,21 +11,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
-@RestController
+// Controlador para gestionar animales
+// Aquí estamos usando la anotación '@RestController', lo que significa que cada método devuelve directamente JSON al cliente.
 @RequestMapping("/animal")
+@RestController
 public class AnimalController {
 
+    // Vamos a usar un servicio para gestionar la lógica relacionada con los animales, y Spring se encarga de inyectar esta dependencia automáticamente.
     @Autowired
     private AnimalServices animalServices;
 
+    // Este método maneja solicitudes para obtener todos los animales y simplemente llama al servicio para hacerlo.
     @GetMapping("/all")
-    public List<Animal> getAllAnimales() { return animalServices.getAllAnimales();}
+    public List<Animal> getAllAnimales() {
+        return animalServices.getAllAnimales();
+    }
 
+    // Aquí, gestionamos solicitudes para obtener animales filtrados por el ID de explotación.
     @GetMapping("/by_id_explotacion/{id_explotacion}")
-    public List<Animal> getAnimalesByIdExplotacion(@PathVariable Integer id_explotacion) { return animalServices.getAnimalesByIdExplotacion(id_explotacion);}
+    public List<Animal> getAnimalesByIdExplotacion(@PathVariable Integer id_explotacion) {
+        return animalServices.getAnimalesByIdExplotacion(id_explotacion);
+    }
 
+    // Este método maneja solicitudes para obtener animales filtrados por el ID de explotación y el ID de animal.
     @GetMapping("/by_id/{idexplotacion}/{idanimal}")
-    public List<Animal> getAnimalesById(@PathVariable Integer idexplotacion, @PathVariable Integer idanimal) { return animalServices.getAnimalesById(idexplotacion, idanimal);}
-
+    public List<Animal> getAnimalesById(@PathVariable Integer idexplotacion, @PathVariable Integer idanimal) {
+        return animalServices.getAnimalesById(idexplotacion, idanimal);
+    }
 }
