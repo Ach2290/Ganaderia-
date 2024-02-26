@@ -45,7 +45,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.MyViewHolder holder, int position) {
 
-        holder.id.setText(animalModels.get(position).getId());
+        holder.id.setText(animalModels.get(position).getId()+"");
         holder.tipo.setText(animalModels.get(position).getEspecie());
 
         Log.d("AnimalAdapter", "onBindViewHolder llamado para la posición: " + position);

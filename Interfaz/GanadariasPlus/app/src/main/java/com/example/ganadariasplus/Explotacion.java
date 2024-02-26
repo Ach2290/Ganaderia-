@@ -109,13 +109,7 @@ public class Explotacion extends AppCompatActivity {
             public void onResponse(Call<List<AnimalModel>> call, Response<List<AnimalModel>> response) {
 
                 for (int i = 0; i < response.body().size();i++){
-                    animalModels.add(new AnimalModel(
-                            response.body().get(i).getId(),
-                            response.body().get(i).getEspecie(),
-                            response.body().get(i).getSexo(),
-                            response.body().get(i).getEdad()
-
-                    ));
+                    animalModels = (ArrayList<AnimalModel>) response.body();
                 }
             }
 
