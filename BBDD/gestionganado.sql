@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-02-2024 a las 13:42:12
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.2
+-- Tiempo de generación: 26-02-2024 a las 20:57:11
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,9 +27,6 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `animal`
 --
 
-CREATE database gestionganado;
-USE gestionganado;
-
 CREATE TABLE `animal` (
   `id` int(11) NOT NULL,
   `especie` varchar(30) NOT NULL,
@@ -38,7 +34,7 @@ CREATE TABLE `animal` (
   `edad` int(11) NOT NULL,
   `estado` varchar(10) NOT NULL,
   `id_explotacion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `animal`
@@ -49,7 +45,17 @@ INSERT INTO `animal` (`id`, `especie`, `sexo`, `edad`, `estado`, `id_explotacion
 (2, 'Cerdo', 'M', 2, 'Enfermo', 3),
 (3, 'Oveja', 'H', 1, 'Saludable', 2),
 (4, 'Pollo', 'M', 0, 'Saludable', 2),
-(5, 'Caballo', 'H', 5, 'Enfermo', 1);
+(5, 'Caballo', 'H', 5, 'Enfermo', 1),
+(6, 'Vaca', 'M', 3, 'Saludable', 1),
+(7, 'Cerdo', 'F', 2, 'Enfermo', 2),
+(8, 'Vaca', 'M', 1, 'Saludable', 3),
+(9, 'Cerdo', 'F', 4, 'Herido', 4),
+(10, 'Vaca', 'M', 5, 'Saludable', 5),
+(11, 'Tigre', 'F', 7, 'Enfermo', 1),
+(12, 'Elefante', 'M', 10, 'Saludable', 2),
+(13, 'Ratón', 'F', 1, 'Herido', 3),
+(14, 'Loro', 'M', 2, 'Saludable', 4),
+(15, 'Serpiente', 'F', 3, 'Enfermo', 5);
 
 -- --------------------------------------------------------
 
@@ -60,7 +66,7 @@ INSERT INTO `animal` (`id`, `especie`, `sexo`, `edad`, `estado`, `id_explotacion
 CREATE TABLE `animal_movimiento` (
   `id_animal` int(11) NOT NULL,
   `id_movimiento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `animal_movimiento`
@@ -86,7 +92,7 @@ CREATE TABLE `explotacion` (
   `tipo_animal` varchar(30) NOT NULL,
   `capacidad` int(11) NOT NULL,
   `id_ganadero` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `explotacion`
@@ -112,23 +118,16 @@ CREATE TABLE `ganadero` (
   `telefono` varchar(9) DEFAULT NULL,
   `correo` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ganadero`
 --
 
 INSERT INTO `ganadero` (`id`, `nombre`, `direccion`, `telefono`, `correo`, `password`) VALUES
-(1, 'Pedro', 'Direccion 3', '987654321', 'correo3@example.com', ''),
+(1, 'Pedro', 'Direccion 3', '987654321', 'correo3@example.com', '12345'),
 (2, 'Juan Pérez', 'Calle 123, Ciudad', '555-1234', 'juan@example.com', ''),
-(3, 'María Rodríguez', 'Avenida 456, Ciudad', '555-5678', 'maria@example.com', ''),
-(4, 'Gonzalo', NULL, NULL, 'holaquetal', ''),
-(5, 'asdfasdfasdf', NULL, NULL, 'asdfasdfasd', ''),
-(6, 'qwerty', NULL, NULL, 'qwerty', '1234'),
-(7, 'asdfghjk', NULL, NULL, 'asdfghjk', '1234'),
-(8, '', NULL, NULL, 'Pedro', ''),
-(9, 'Ruben', NULL, NULL, 'correo3@example.com', '123456789'),
-(10, 'Carlos', NULL, NULL, 'qasdfasdfasdfasdfasdf', '1');
+(3, 'María Rodríguez', 'Avenida 456, Ciudad', '555-5678', 'maria@example.com', '');
 
 -- --------------------------------------------------------
 
@@ -141,7 +140,7 @@ CREATE TABLE `matadero` (
   `nombre` varchar(30) NOT NULL,
   `direccion` varchar(30) NOT NULL,
   `telefono` varchar(9) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `matadero`
@@ -162,22 +161,26 @@ INSERT INTO `matadero` (`id`, `nombre`, `direccion`, `telefono`) VALUES
 
 CREATE TABLE `movimiento` (
   `id` int(11) NOT NULL,
-  `tipo` varchar(10) NOT NULL,
+  `tipo` varchar(10) DEFAULT NULL,
   `id_matadero` int(11) DEFAULT NULL,
   `id_explotacion` int(11) DEFAULT NULL,
-  `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fecha` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `movimiento`
 --
 
 INSERT INTO `movimiento` (`id`, `tipo`, `id_matadero`, `id_explotacion`, `fecha`) VALUES
-(1, 'Compra', NULL, 1, '2024-02-05'),
-(2, 'Venta', NULL, 2, '2024-02-10'),
-(3, 'Traslado', NULL, 3, '2024-02-15'),
-(4, 'Compra', NULL, 4, '2024-02-20'),
-(5, 'Venta', NULL, 5, '2024-02-25');
+(1, 'Compra', NULL, 1, NULL),
+(2, 'Venta', NULL, 2, NULL),
+(3, 'Traslado', NULL, 3, NULL),
+(4, 'Compra', NULL, 4, NULL),
+(5, 'Venta', NULL, 5, NULL),
+(6, 'matadero', 2, NULL, NULL),
+(7, 'VENTA', NULL, 4, '1998-08-02'),
+(14, 'VENTA', NULL, 4, NULL),
+(16, 'VENTA', NULL, 1, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -233,7 +236,7 @@ ALTER TABLE `movimiento`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `ganadero`
@@ -251,7 +254,7 @@ ALTER TABLE `matadero`
 -- AUTO_INCREMENT de la tabla `movimiento`
 --
 ALTER TABLE `movimiento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas

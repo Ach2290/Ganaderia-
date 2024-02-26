@@ -64,7 +64,6 @@ public class Movimiento extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerLanguages.setAdapter(adapter);
 
-        Toast.makeText(this, spinnerLanguages.getSelectedItem().toString()+"", Toast.LENGTH_SHORT).show();
         spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 

@@ -54,6 +54,7 @@
          android:layout_height="40dp"
          android:background="@drawable/borde_verde"
          android:backgroundTint="@color/imp_green"
+         android:inputType="textPassword"
          android:hint="CONTRASEÑA"
          android:padding="10dp"
          android:textCursorDrawable="@drawable/cursor_color"
