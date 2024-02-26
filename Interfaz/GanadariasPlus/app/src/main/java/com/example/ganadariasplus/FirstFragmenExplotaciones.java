@@ -34,30 +34,32 @@ public class FirstFragmenExplotaciones extends Fragment {
         View rootView = inflater.inflate(R.layout.fragmen_explotaciones, container, false);
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerExplotaciones);
-        if(explotacionModels.size() == 0){
+        // Verifica si la lista de explotaciones está vacía antes de configurar el adaptador
+        if (explotacionModels.size() == 0) {
             setExplotacionModel();
         }
 
         ExplotacionAdapter adapter = new ExplotacionAdapter(getActivity(), explotacionModels);
-
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return rootView;
     }
 
-
-    private void setExplotacionModel(){
-
-        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+    // Método para obtener y establecer los datos de las explotaciones asociadas al ganadero
+    private void setExplotacionModel() {
+        // Obtiene el ID del ganadero desde SharedPreferences
+        SharedPreferences sharedPref = requireActivity().getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
         int idGanadero = sharedPref.getInt("idGanadero", 1);
 
+        // Realiza la llamada a la API para obtener las explotaciones del ganadero
         Call<List<ExplotacionModel>> call = ApiAdapter.getApiService().byIdGanadero(idGanadero);
         call.enqueue(new Callback<List<ExplotacionModel>>() {
 
             @Override
             public void onResponse(Call<List<ExplotacionModel>> call, Response<List<ExplotacionModel>> response) {
-
-                for (int i = 0; i < response.body().size();i++){
+                // Llena la lista de explotaciones con los datos obtenidos de la API
+                for (int i = 0; i < response.body().size(); i++) {
                     explotacionModels.add(new ExplotacionModel(
                             response.body().get(i).getId(),
                             response.body().get(i).getNombre()
@@ -67,9 +69,8 @@ public class FirstFragmenExplotaciones extends Fragment {
 
             @Override
             public void onFailure(Call<List<ExplotacionModel>> call, Throwable t) {
-
+                // Maneja la falla en la obtención de datos de la API (puede implementarse según la lógica de la aplicación)
             }
         });
-
     }
 }

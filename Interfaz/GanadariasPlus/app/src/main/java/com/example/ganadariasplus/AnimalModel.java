@@ -1,15 +1,17 @@
 package com.example.ganadariasplus;
 
 public class AnimalModel {
-
+    // Atributos del animal
     private int id;
     private String especie;
     private String sexo;
     private int edad;
     private String estado;
 
+    // ID de la explotación a la que pertenece el animal
     private int id_explotacion;
 
+    // Métodos de acceso para obtener y establecer valores de los atributos
     public AnimalModel(int id, String especie, String sexo, int edad) {
         this.id = id;
         this.especie = especie;

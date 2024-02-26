@@ -17,14 +17,13 @@ public class Movimiento extends AppCompatActivity {
     ImageView btn_atras;
     Button anadir_animal;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movimiento);
 
+        // Configuración del botón para añadir un animal
         anadir_animal = findViewById(R.id.button_anadirAnimal);
-
         anadir_animal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,8 +32,8 @@ public class Movimiento extends AppCompatActivity {
             }
         });
 
+        // Configuración del botón para regresar a la pantalla de explotación
         btn_atras = findViewById(R.id.backIcon);
-
         btn_atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +41,5 @@ public class Movimiento extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
