@@ -19,9 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHolder> {
-
+    // lista de modelos de animales
     Context context;
     ArrayList<AnimalModel> animalModels;
+    // Constructor del adaptador para el RecyclerView que muestra la lista de animales en la aplicación.
+
+    // El adaptador se encarga de gestionar la interfaz entre los datos de la lista de animales y la vista que los muestra en el RecyclerView.
+    // Recibe el contexto de la actividad o fragmento que lo utiliza y la lista de modelos de animales que se mostrarán en la vista.
 
     public AnimalAdapter(Context context, ArrayList<AnimalModel> animalModels){
         this.context = context;
@@ -30,6 +34,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
         Log.d("AnimalAdapter", "Constructor llamado con contexto: " + context.toString());
 
     }
+    // Método llamado cuando se necesita crear un nuevo ViewHolder
     @NonNull
     @Override
     public AnimalAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,7 +46,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
 
         return new AnimalAdapter.MyViewHolder(view);
     }
-
+    // Método llamado para asociar los datos a un ViewHolder específico
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.MyViewHolder holder, int position) {
 
@@ -54,15 +59,16 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
 
 
     }
-
+    // Método que devuelve la cantidad de elementos en la lista
     @Override
     public int getItemCount() {
         return animalModels.size();
     }
-
+    // Clase interna que representa el ViewHolder para cada elemento en el RecyclerView
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView id, tipo, edad, sexo;
 
+        // Constructor del ViewHolder
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
             id = itemView.findViewById(R.id.idAnimal);
