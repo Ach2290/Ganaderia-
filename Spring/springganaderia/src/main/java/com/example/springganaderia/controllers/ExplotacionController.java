@@ -56,6 +56,9 @@ public class ExplotacionController {
     public List<Explotacion> getExplotacionesByIdGanadero(@PathVariable Integer id) {
         return explotacionService.getExplotacionesByIdGanadero(id);
     }
+
+    @GetMapping("busquedaId/{id}/{id_ganadero}")
+    public List<Explotacion> barrabusqueda(@PathVariable Integer id, Integer id_ganadero){ return explotacionService.byIdGanaderoyExplotacion(id, id_ganadero);}
 }
 
 

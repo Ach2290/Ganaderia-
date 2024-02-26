@@ -57,6 +57,16 @@ public interface ApiService {
     @GET("animal/by_id_explotacion/{id_explotacion}")
     Call<List<AnimalModel>> animalByIdExplotacion(@Path("id_explotacion") Integer id_explotacion);
 
+    @GET("animal/by_id/{id_explotacion}/{id}")
+    Call<List<AnimalModel>> busquedaAnimal(@Path("id_explotacion")Integer id_explotacion, @Path("id") Integer id_animal);
+
     @GET("matadero/byId/{id}")
     Call <MataderoModel> mataderoById(@Path("id") Integer id);
+
+    @GET("explotacion/busquedaId/{id}/{id_ganadero}")
+    Call<List<AnimalModel>> busquedaExplotacion(@Path("id")Integer id_explotacion, @Path("id_ganadero") Integer id_ganadero);
+
+    @POST("movimiento/addMovimiento")
+    Call <MovimientoModel> addMovimiento(@Body MovimientoModel movimientoModel);
+
 }

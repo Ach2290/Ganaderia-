@@ -34,8 +34,8 @@ public class AnimalController {
     }
 
     // Este método maneja solicitudes para obtener animales filtrados por el ID de explotación y el ID de animal.
-    @GetMapping("/by_id/{idexplotacion}/{idanimal}")
-    public List<Animal> getAnimalesById(@PathVariable Integer idexplotacion, @PathVariable Integer idanimal) {
-        return animalServices.getAnimalesById(idexplotacion, idanimal);
+    @GetMapping("/by_id/{id_explotacion}/{id}")
+    public List<Animal> getAnimalesById(@PathVariable Integer id_explotacion, @PathVariable Integer id) {
+        return animalServices.getAnimalesById(id_explotacion, id);
     }
 }

@@ -5,16 +5,19 @@
     android:background="@color/bc_green"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <SearchView
+    <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/seachviewbackround"
-        app:layout_constraintBottom_toTopOf="@+id/topView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rounded"
+        android:text="MIS EXPLOTACIONES"
+        android:paddingTop="10dp"
+        android:textSize="35dp"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerExplotaciones"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExplotaciones"

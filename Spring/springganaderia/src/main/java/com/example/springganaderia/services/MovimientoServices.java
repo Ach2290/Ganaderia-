@@ -20,8 +20,6 @@ public class MovimientoServices {
     // Este método devuelve una lista de movimientos filtrados por el ID del ganadero.
    public List<Movimiento> obtenerMovimientoIdGanadero(Integer id_ganadero) {return movimientoRepository.obtenerMovimientoIdGanadero(id_ganadero);}
 
-    public Movimiento getById(@PathVariable Integer id) {
-        return movimientoRepository.getById(id);
-    }
+    public Movimiento addMovimiento(Movimiento movimiento) {return movimientoRepository.save(movimiento);}
 
 }

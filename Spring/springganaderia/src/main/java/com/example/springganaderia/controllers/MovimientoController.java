@@ -4,10 +4,7 @@ import com.example.springganaderia.models.Ganadero;
 import com.example.springganaderia.models.Movimiento;
 import com.example.springganaderia.services.MovimientoServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,8 +25,8 @@ public class MovimientoController {
         return movimientoServices.obtenerMovimientoIdGanadero(id_ganadero);
     }
 
-    @GetMapping("/byId/{id}")
-    public Movimiento getById(@PathVariable Integer id) {
-        return movimientoServices.getById(id);
+    @PostMapping("/addMovimiento")
+    public Movimiento addMovimiento(@RequestBody Movimiento movimiento) {
+        return movimientoServices.addMovimiento(movimiento);
     }
 }

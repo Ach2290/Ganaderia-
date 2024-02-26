@@ -20,7 +20,7 @@ public class Explotacion {
     // '@Id' marca este campo como clave primaria.
     // '@GeneratedValue' indica que el valor de esta columna se genera automáticamente (autoincremental).
 
-    @Column(name= "id")
+    @Column(name="id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

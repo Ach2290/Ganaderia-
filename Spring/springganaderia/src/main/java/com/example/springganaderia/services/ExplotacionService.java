@@ -29,4 +29,6 @@ public class ExplotacionService {
     public List<Explotacion> getExplotacionesByIdGanadero(Integer id) {
         return explotacionRepository.obtenerExplotacionesPorIdGanadero(id);
     }
+
+    public List<Explotacion> byIdGanaderoyExplotacion(Integer id, Integer id_ganadero) { return explotacionRepository.barrabusqueda(id, id_ganadero);}
 }

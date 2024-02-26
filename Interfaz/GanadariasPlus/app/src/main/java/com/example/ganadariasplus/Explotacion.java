@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,8 @@ public class Explotacion extends AppCompatActivity {
     FloatingActionButton btn_movimiento;
     ImageView btn_atras;
 
+    SearchView busqueda;
+
     // Lista de modelos de animales
     ArrayList<AnimalModel> animalModels = new ArrayList<>();
 
@@ -41,6 +44,7 @@ public class Explotacion extends AppCompatActivity {
         // Inicialización de botones y vistas
         btn_movimiento = findViewById(R.id.boton_movimiento);
         btn_atras = findViewById(R.id.backIcon);
+        busqueda = findViewById(R.id.searchView);
 
         TextView nombreExplotacion = findViewById(R.id.tv_nombreExplotacion);
         TextView textViewIdExplotacion = findViewById(R.id.tv_idExplotacion);
@@ -66,29 +70,8 @@ public class Explotacion extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ExplotacionModel> call, Throwable t) {
-                // Manejo de la falla en la llamada a la API si es necesario
             }
         });
-
-
-        // Configuración del RecyclerView para mostrar la lista de animales
-        RecyclerView recyclerView = findViewById(R.id.recyclerAnimales);
-
-        // Si la lista de animales está vacía, se llena con la llamada a la API
-        if (animalModels.size() == 0) {
-            setAnimalModel();
-            Toast.makeText(this, "" + animalModels.size(), Toast.LENGTH_SHORT).show();
-        }
-
-        // Si la lista de animales no es nula ni está vacía, se configura el adaptador y el LinearLayoutManager
-        if (animalModels != null && !animalModels.isEmpty()) {
-            AnimalAdapter adapter = new AnimalAdapter(this, animalModels);
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        } else {
-            Log.d("AnimalAdapter", "La lista animalModels es nula o vacía");
-        }
 
         // Configuración del botón para regresar a la actividad Principal
         btn_atras.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +90,50 @@ public class Explotacion extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        busqueda.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                if(s.isEmpty()){
+                    setAnimalModel();
+                }else {
+
+                    SharedPreferences sharedPref = Explotacion.this.getSharedPreferences("mySharedPreferences", Context.MODE_PRIVATE);
+                    int idExplotacion = Integer.parseInt(sharedPref.getString("idExplotacion", "1"));
+
+                    Call<List<AnimalModel>> call = ApiAdapter.getApiService().busquedaAnimal(idExplotacion, Integer.parseInt(s));
+                    call.enqueue(new Callback<List<AnimalModel>>() {
+                        @Override
+                        public void onResponse(Call<List<AnimalModel>> call, Response<List<AnimalModel>> response) {
+                            animalModels = (ArrayList<AnimalModel>) response.body();
+                            RecyclerView recyclerView = findViewById(R.id.recyclerAnimales);
+                            AnimalAdapter adapter = new AnimalAdapter(Explotacion.this, animalModels);
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(Explotacion.this));
+                            // Llenar la lista de modelos de animales con la respuesta de la API
+                            animalModels = (ArrayList<AnimalModel>) response.body();
+                        }
+                        @Override
+                        public void onFailure(Call<List<AnimalModel>> call, Throwable t) {
+
+                        }
+                    });
+
+                }
+
+                return false;
+            }
+        });
     }
+
+
 
     // Método para llenar la lista de modelos de animales mediante una llamada a la API
     private void setAnimalModel() {
@@ -138,6 +164,7 @@ public class Explotacion extends AppCompatActivity {
             }
         });
 
-        Toast.makeText(Explotacion.this, "segundo" + animalModels.size(), Toast.LENGTH_SHORT).show();
     }
+
+
 }
