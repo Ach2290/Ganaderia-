@@ -64,13 +64,10 @@ public class Movimiento extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerLanguages.setAdapter(adapter);
 
-        eleccion = spinnerLanguages.getSelectedItemPosition();
-
         spinnerLanguages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if(eleccion != i){
-                    if(eleccion == 0){
+                    if(i == 0){
 
                         id_destino.addTextChangedListener(new TextWatcher() {
                             @Override
@@ -134,7 +131,7 @@ public class Movimiento extends AppCompatActivity {
 
 
                     }
-                }
+
 
                 eleccion = i;
             }
