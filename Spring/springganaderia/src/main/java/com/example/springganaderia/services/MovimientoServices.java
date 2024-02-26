@@ -1,10 +1,12 @@
 package com.example.springganaderia.services;
 
 // Este es el servicio encargado de gestionar la lógica de negocio relacionada con la entidad 'Movimiento' en nuestra aplicación Spring.
+import com.example.springganaderia.models.Ganadero;
 import com.example.springganaderia.models.Movimiento;
 import com.example.springganaderia.repositories.MovimientoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -17,5 +19,9 @@ public class MovimientoServices {
 
     // Este método devuelve una lista de movimientos filtrados por el ID del ganadero.
    public List<Movimiento> obtenerMovimientoIdGanadero(Integer id_ganadero) {return movimientoRepository.obtenerMovimientoIdGanadero(id_ganadero);}
+
+    public Movimiento getById(@PathVariable Integer id) {
+        return movimientoRepository.getById(id);
+    }
 
 }

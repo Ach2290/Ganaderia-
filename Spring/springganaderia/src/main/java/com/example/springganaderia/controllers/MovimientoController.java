@@ -1,5 +1,6 @@
 package com.example.springganaderia.controllers;
 
+import com.example.springganaderia.models.Ganadero;
 import com.example.springganaderia.models.Movimiento;
 import com.example.springganaderia.services.MovimientoServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,10 @@ public class MovimientoController {
     @GetMapping("/by_id_ganadero/{id_ganadero}")
     List<Movimiento> obtenerMovimientoIdGanadero(@PathVariable Integer id_ganadero) {
         return movimientoServices.obtenerMovimientoIdGanadero(id_ganadero);
+    }
+
+    @GetMapping("/byId/{id}")
+    public Movimiento getById(@PathVariable Integer id) {
+        return movimientoServices.getById(id);
     }
 }

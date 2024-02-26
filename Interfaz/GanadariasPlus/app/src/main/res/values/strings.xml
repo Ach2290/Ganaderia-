@@ -26,4 +26,10 @@
         <item>7.45761</item>
         <item>16304.5</item>
     </string-array>
+
+    <string-array name="tipoMovimiento">
+        <item>VENTA</item>
+        <item>MATADERO</item>
+    </string-array>
+
 </resources>

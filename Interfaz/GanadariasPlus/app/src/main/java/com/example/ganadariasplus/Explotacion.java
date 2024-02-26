@@ -55,6 +55,8 @@ public class Explotacion extends AppCompatActivity {
                 nombreExplotacion.setText(response.body().getNombre());
                 textViewIdExplotacion.setText(response.body().getId());
                 ubicacionExplotacion.setText(response.body().getUbicacion());
+                setAnimalModel();
+
             }
 
             @Override
@@ -62,22 +64,6 @@ public class Explotacion extends AppCompatActivity {
 
             }
         });
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerAnimales);
-
-        if(animalModels.size() == 0){
-            setAnimalModel();
-            Toast.makeText(this, "" + animalModels.size(), Toast.LENGTH_SHORT).show();
-        }
-
-        if (animalModels != null && !animalModels.isEmpty()) {
-            AnimalAdapter adapter = new AnimalAdapter(this, animalModels);
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        } else {
-            Log.d("AnimalAdapter", "La lista animalModels es nula o vacía");
-        }
 
 
         btn_atras.setOnClickListener(new View.OnClickListener() {
@@ -108,9 +94,11 @@ public class Explotacion extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<AnimalModel>> call, Response<List<AnimalModel>> response) {
 
-                for (int i = 0; i < response.body().size();i++){
-                    animalModels = (ArrayList<AnimalModel>) response.body();
-                }
+                animalModels = (ArrayList<AnimalModel>) response.body();
+                RecyclerView recyclerView = findViewById(R.id.recyclerAnimales);
+                AnimalAdapter adapter = new AnimalAdapter(Explotacion.this, animalModels);
+                recyclerView.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Explotacion.this));
             }
 
             @Override

@@ -6,9 +6,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_explotacion"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:elevation="15dp"
-        app:cardCornerRadius="15dp"
         android:backgroundTint="@color/card_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,38 +16,73 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/idAnimal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/imp_green"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:paddingTop="10dp"
-                    android:paddingStart="10dp"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="ID:" />
+            <TextView
+                android:id="@+id/idAnimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="ID:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tipoAnimal"/>
 
-                <TextView
-                    android:id="@+id/tipoAnimal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/bc_green"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:padding="5dp"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:text="NOMBRE EXPLOTACIÓN" />
+            <TextView
+                android:id="@+id/tipoAnimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bc_green"
+                android:textSize="17sp"
+                android:gravity="center"
 
-            </LinearLayout>
+                android:textStyle="bold"
+                android:text="ESPECIE"
+                app:layout_constraintStart_toEndOf="@id/idAnimal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/sexoAnimal"/>
+
+            <TextView
+                android:id="@+id/sexoAnimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bc_green"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="SEXO"
+                app:layout_constraintStart_toEndOf="@id/tipoAnimal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/edadAnimal"/>
+
+            <TextView
+                android:id="@+id/edadAnimal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/bc_green"
+                android:gravity="center"
+
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="EDAD"
+                app:layout_constraintStart_toEndOf="@id/sexoAnimal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

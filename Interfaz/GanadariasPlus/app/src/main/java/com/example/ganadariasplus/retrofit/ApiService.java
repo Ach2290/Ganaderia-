@@ -7,6 +7,7 @@ import retrofit2.Call;
 import com.example.ganadariasplus.AnimalModel;
 import com.example.ganadariasplus.Explotacion;
 import com.example.ganadariasplus.ExplotacionModel;
+import com.example.ganadariasplus.MataderoModel;
 import com.example.ganadariasplus.Movimiento;
 import com.example.ganadariasplus.MovimientoModel;
 import com.example.ganadariasplus.retrofit.model.Ganadero;
@@ -55,4 +56,7 @@ public interface ApiService {
 
     @GET("animal/by_id_explotacion/{id_explotacion}")
     Call<List<AnimalModel>> animalByIdExplotacion(@Path("id_explotacion") Integer id_explotacion);
+
+    @GET("matadero/byId/{id}")
+    Call <MataderoModel> mataderoById(@Path("id") Integer id);
 }

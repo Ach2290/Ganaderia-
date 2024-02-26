@@ -45,8 +45,10 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull AnimalAdapter.MyViewHolder holder, int position) {
 
-        holder.id.setText(animalModels.get(position).getId()+"");
-        holder.tipo.setText(animalModels.get(position).getEspecie());
+        holder.id.setText("ID: " + animalModels.get(position).getId());
+        holder.tipo.setText(animalModels.get(position).getEspecie()+"");
+        holder.sexo.setText(animalModels.get(position).getSexo()+"");
+        holder.edad.setText(animalModels.get(position).getEdad()+"");
 
         Log.d("AnimalAdapter", "onBindViewHolder llamado para la posición: " + position);
 
@@ -65,6 +67,8 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
             super(itemView);
             id = itemView.findViewById(R.id.idAnimal);
             tipo = itemView.findViewById(R.id.tipoAnimal);
+            edad = itemView.findViewById(R.id.edadAnimal);
+            sexo = itemView.findViewById(R.id.sexoAnimal);
 
             Log.d("AnimalAdapter", "MyViewHolder constructor llamado");
 

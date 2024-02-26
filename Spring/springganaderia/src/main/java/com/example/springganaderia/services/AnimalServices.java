@@ -23,5 +23,4 @@ public class AnimalServices {
     // Este método devuelve una lista de animales filtrados por el ID de explotación y el ID de animal.
     public List<Animal> getAnimalesById(Integer idexplotacion, Integer idanimal){ return animalRepository.obtenerAnimalesPorId(idexplotacion, idanimal);}
 
-
 }
